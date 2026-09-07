@@ -91,21 +91,21 @@
           <h2 class="text-taupe font-semibold tracking-widest text-sm uppercase mb-2">PORTAFOLIO UNIVERSITARIO</h2>
           <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight">Trabajos Destacados</h1>
         </div>
-        <p class="text-sm opacity-75 font-light">Haz clic en cualquier proyecto para ver sus renders y documentación detallada.</p>
+        <p class="text-sm opacity-75 font-light">Haz clic en cualquier proyecto para ver sus renders, video 360 y documentación detallada.</p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         <div onclick="abrirProyecto('blender')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
+            <img src="Render N°1 DIORAMA.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
               <svg class="w-3.5 h-3.5 fill-current text-bordeaux" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg> BLENDER 3D
             </div>
           </div>
           <div class="p-8">
-            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Modelado de Personaje Mitológico</h3>
-            <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Esculpido digital detallado, texturizado PBR y optimización de malla orientada a mundos virtuales.</p>
-            <span class="text-xs font-bold text-taupe underline">Ver detalles y renders →</span>
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Diorama Habitación Retro Años 90</h3>
+            <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Recreación estética vintage con iluminación ambiental, modelado detallado de objetos y recorrido en video 360.</p>
+            <span class="text-xs font-bold text-taupe underline">Ver galería, video 360 y renders →</span>
           </div>
         </div>
 
@@ -251,28 +251,35 @@
 
     const proyectosData = {
       blender: {
-        titulo: "Modelado de Personaje Mitológico (Blender)",
-        categoria: "MODELADO 3D Y DISEÑO DE MUNDOS",
-        imagen: "https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=1200",
-        descripcion: "Proyecto enfocado en la reinterpretación artística de figuras mitológicas mediante esculpido avanzado y texturizado PBR.",
-        detalles: "Desarrollado en Blender y Substance Painter. Se estructuró bajo una retopología optimizada para entornos interactivos en Realidad Virtual, manteniendo un alto nivel de detalle visual con una eficiente distribución de polígonos.",
-        tecnologias: ["Blender", "ZBrush", "Substance Painter", "PBR Shading"]
+        titulo: "Diorama Habitación Retro Años 90 (Blender)",
+        categoria: "MODELADO 3D Y DISEÑO DE ESCENARIOS",
+        descripcion: "Proyecto universitario consistente en la creación de un diorama completo inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica mediante el modelado de mobiliario clásico, texturizado detallado e iluminación ambiental.",
+        detalles: "Modelado poligonal optimizado en Blender, aplicando técnicas de iluminación volumétrica y composición de escena para simular un diorama coleccionable. Además de los renders en alta resolución, se integró un recorrido en video 360 para apreciar el espacio tridimensional desde todos los ángulos.",
+        tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Composición de Diorama"],
+        imagenes: [
+          "Render N°1 DIORAMA.png",
+          "Render N°2 DIORAMA.png",
+          "Render N°3 DIORAMA.png",
+          "Render N°4 DIORAMA.png"
+        ],
+        // Reemplaza 'video-diorama.mp4' por el nombre exacto de tu archivo de video en GitHub
+        video360: "video-diorama.mp4" 
       },
       unity: {
         titulo: "Prototipo de Realidad Virtual / Juegos 3D (Unity)",
         categoria: "INGENIERÍA Y DESARROLLO INTERACTIVO",
-        imagen: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200",
         descripcion: "Prototipo interactivo desarrollado en Unity con mecánicas inspiradas en la resolución de desafíos lógicos y exploración espacial.",
         detalles: "Programación en C# estructurada bajo patrones limpios. Incluye gestión de interacciones inmersivas, físicas personalizadas y optimización de rendimiento gráfico para entornos de cascos VR.",
-        tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Game Design"]
+        tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Game Design"],
+        imagenes: ["https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200"]
       },
       arduino: {
         titulo: "Sistema Electrónico Interactivo (Arduino)",
         categoria: "HARDWARE Y PROTOTIPADO",
-        imagen: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
         descripcion: "Desarrollo de prototipo físico utilizando microcontroladores para conectar entradas del entorno real con sistemas digitales.",
         detalles: "Programado en C++, integrando sensores analógicos y digitales para resolver problemas de automatización y control de hardware interactivo.",
-        tecnologias: ["Arduino IDE", "C++", "Sensores y Actuadores", "Prototipado"]
+        tecnologias: ["Arduino IDE", "C++", "Sensores y Actuadores", "Prototipado"],
+        imagenes: ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"]
       }
     };
 
@@ -281,12 +288,40 @@
       if (!proj) return;
 
       const contenedor = document.getElementById('detalle-contenido');
+      
+      // Construimos el HTML de la galería de imágenes .png
+      let galeriaHTML = proj.imagenes.map(img => `
+        <div class="rounded-xl overflow-hidden border border-brown/40 shadow-md bg-black/40 h-64 md:h-80">
+          <img src="${img}" alt="Render del diorama" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      `).join('');
+
+      // Si el proyecto tiene video 360, lo agregamos con un reproductor profesional
+      let videoHTML = "";
+      if (proj.video360) {
+        videoHTML = `
+          <div class="mb-10">
+            <h3 class="text-xl font-bold text-whiteSmoke mb-4">Recorrido en Video 360°</h3>
+            <div class="rounded-2xl overflow-hidden border border-brown/40 shadow-xl bg-black aspect-video">
+              <video src="${proj.video360}" controls autoplay muted loop class="w-full h-full object-cover">
+                Tu navegador no soporta la reproducción de video.
+              </video>
+            </div>
+          </div>
+        `;
+      }
+
       contenedor.innerHTML = `
         <span class="text-xs font-bold text-taupe tracking-widest uppercase mb-2 block">${proj.categoria}</span>
         <h1 class="text-3xl md:text-4xl font-extrabold text-whiteSmoke mb-6">${proj.titulo}</h1>
         
-        <div class="h-[350px] md:h-[450px] rounded-2xl overflow-hidden mb-8 border border-brown/40 shadow-lg">
-          <img src="${proj.imagen}" alt="${proj.titulo}" class="w-full h-full object-cover">
+        ${videoHTML}
+
+        <div class="mb-10">
+          <h3 class="text-xl font-bold text-whiteSmoke mb-4">Galería de Renders (${proj.imagenes.length})</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${galeriaHTML}
+          </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mb-8">
