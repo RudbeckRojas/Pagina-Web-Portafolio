@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <link rel="stylesheet" href="style.css">
+
   <script>
     tailwind.config = {
       theme: {
@@ -19,35 +21,11 @@
             whiteSmoke: '#F2F4F3',
             taupe: '#A9927D',
             brown: '#5E503F'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
           }
         }
       }
     }
   </script>
-
-  <style>
-    * { font-family: 'Inter', sans-serif !important; box-sizing: border-box; }
-    
-    /* Eliminar barra de desplazamiento fea manteniendo el scroll */
-    html {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE y Edge */
-    }
-    html::-webkit-scrollbar {
-      display: none; /* Chrome, Safari y Opera */
-    }
-
-    body { background-color: #0A0908; color: #F2F4F3; margin: 0; padding: 0; overflow-x: hidden; }
-    .seccion { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
-    .seccion.activa { display: block; opacity: 1; }
-    .card-glow:hover {
-      box-shadow: 0 10px 30px -10px rgba(169, 146, 125, 0.2);
-      border-color: #A9927D;
-    }
-  </style>
 </head>
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
 
@@ -68,13 +46,13 @@
 
   <main class="flex-grow w-full">
 
-    <div id="inicio" class="seccion activa w-full">
+    <div id="inicio" class="seccion activa w-full animate-fade-in">
       <div class="min-h-[calc(100vh-80px)] w-full grid grid-cols-1 lg:grid-cols-12 bg-black overflow-hidden relative">
         
         <div class="lg:col-span-7 flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 z-30">
           <div class="flex flex-wrap gap-3 mb-6">
-            <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-bordeaux/50 text-whiteSmoke border border-bordeaux">MODELADOR 3D</span>
-            <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-brown/40 text-taupe border border-brown">PROGRAMADOR</span>
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider bg-bordeaux/40 text-whiteSmoke border border-bordeaux shadow-md">MODELADOR 3D</span>
+            <span class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider bg-brown/30 text-taupe border border-brown/60 shadow-md">PROGRAMADOR</span>
           </div>
           
           <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-whiteSmoke tracking-tight">
@@ -88,7 +66,7 @@
           </p>
           
           <div class="flex flex-wrap gap-4">
-            <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-xl font-bold bg-bordeaux text-whiteSmoke hover:bg-opacity-90 transition-all shadow-xl hover:-translate-y-1 tracking-wide flex items-center gap-3">
+            <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-xl font-bold btn-bordeaux text-whiteSmoke tracking-wide flex items-center gap-3">
               <i class="fa-solid fa-code"></i> Ver mis Proyectos
             </button>
             <button onclick="cambiarSeccion('sobre-mi')" class="px-8 py-4 rounded-xl font-bold bg-transparent border border-taupe text-taupe hover:bg-taupe/10 transition-all tracking-wide">
@@ -117,15 +95,15 @@
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden group shadow-xl transition-all duration-300 card-glow">
+        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
               <i class="fa-solid fa-cube text-bordeaux"></i> BLENDER 3D
             </div>
           </div>
           <div class="p-8">
-            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke group-hover:text-taupe transition-colors">Modelado de Personaje Sci-Fi</h3>
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Modelado de Personaje Sci-Fi</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Esculpido digital detallado, texturizado PBR y optimización de malla orientada a motores gráficos.</p>
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">ZBrush / Blender</span>
@@ -134,15 +112,15 @@
           </div>
         </div>
 
-        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden group shadow-xl transition-all duration-300 card-glow">
+        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
               <i class="fa-solid fa-gamepad text-taupe"></i> UNITY ENGINE
             </div>
           </div>
           <div class="p-8">
-            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke group-hover:text-taupe transition-colors">Prototipo Videojuego 3D</h3>
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Prototipo Videojuego 3D</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Programación de mecánicas de movimiento en C#, control de cámaras fluidas y gestión de físicas de juego.</p>
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">Unity 3D</span>
@@ -151,15 +129,15 @@
           </div>
         </div>
 
-        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden group shadow-xl transition-all duration-300 card-glow">
+        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
               <i class="fa-solid fa-microchip text-brown"></i> ARDUINO HARDWARE
             </div>
           </div>
           <div class="p-8">
-            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke group-hover:text-taupe transition-colors">Sistema Electrónico Interactivo</h3>
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Sistema Electrónico Interactivo</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Integración de sensores analógicos y digitales con microcontroladores programados en C++.</p>
             <div class="flex flex-wrap gap-2">
               <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">Arduino IDE</span>
@@ -185,29 +163,29 @@
             Mi objetivo principal al buscar una <strong class="text-taupe font-semibold">práctica profesional</strong> es integrarme a un equipo multidisciplinario donde pueda aportar soluciones creativas, aprender flujos de trabajo de la industria y seguir expandiendo mis capacidades técnicas.
           </p>
           <div class="pt-4 flex gap-4">
-            <button onclick="cambiarSeccion('contacto')" class="px-6 py-3 rounded-lg font-bold bg-bordeaux text-whiteSmoke hover:bg-opacity-90 transition-all shadow-md">
+            <button onclick="cambiarSeccion('contacto')" class="px-6 py-3 rounded-xl font-bold btn-bordeaux text-whiteSmoke shadow-md">
               Hablemos para Práctica
             </button>
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
-          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl">
+          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
             <i class="fa-solid fa-cube text-3xl text-taupe mb-3"></i>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Modelado 3D</h3>
             <p class="text-sm opacity-70 font-light">Blender, texturizado, UV Mapping y optimización.</p>
           </div>
-          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl">
+          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
             <i class="fa-solid fa-gamepad text-3xl text-bordeaux mb-3"></i>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Game Dev</h3>
             <p class="text-sm opacity-70 font-light">Unity Engine y scripting avanzado en C#.</p>
           </div>
-          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl">
+          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
             <i class="fa-solid fa-code text-3xl text-whiteSmoke mb-3"></i>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Lógica & Código</h3>
             <p class="text-sm opacity-70 font-light">Estructuras limpias, patrones y resolución de problemas.</p>
           </div>
-          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl">
+          <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
             <i class="fa-solid fa-microchip text-3xl text-brown mb-3"></i>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Hardware</h3>
             <p class="text-sm opacity-70 font-light">Arduino, circuitos y prototipado electrónico.</p>
@@ -223,7 +201,7 @@
         <p class="text-lg opacity-75 font-light mt-2">¿Buscas alumno en práctica? Estoy disponible para incorporarme a tu equipo.</p>
       </div>
       
-      <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl max-w-2xl shadow-xl">
+      <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl max-w-2xl shadow-xl card-glow">
         <div class="space-y-6 mb-10">
           <p class="text-lg flex items-center gap-4"><i class="fa-solid fa-envelope text-taupe text-xl"></i> <span class="opacity-90">tu-correo@universidad.edu</span></p>
           <p class="text-lg flex items-center gap-4"><i class="fa-solid fa-briefcase text-taupe text-xl"></i> <span class="opacity-90">Disponibilidad Inmediata (Práctica Profesional)</span></p>
@@ -246,7 +224,8 @@
 
     function cambiarSeccion(id) {
       document.querySelectorAll('.seccion').forEach(el => el.classList.remove('activa'));
-      document.getElementById(id).classList.add('activa');
+      const target = document.getElementById(id);
+      target.classList.add('activa');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
