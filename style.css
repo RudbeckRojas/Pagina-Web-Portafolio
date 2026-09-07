@@ -38,7 +38,7 @@ body {
   transform: translateY(0);
 }
 
-/* Efectos de brillo y profundidad en tarjetas (Hover 3D) */
+/* Efectos de brillo y profundidad en tarjetas (Hover con destello rojo) */
 .card-glow {
   position: relative;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -49,14 +49,14 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 1rem;
-  border: 1px solid rgba(169, 146, 125, 0.2);
+  border: 1px solid rgba(73, 17, 28, 0.4);
   pointer-events: none;
   transition: border-color 0.4s ease;
 }
 .card-glow:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 20px 40px -15px rgba(73, 17, 28, 0.4), 0 0 20px -5px rgba(169, 146, 125, 0.2);
-  border-color: #A9927D;
+  box-shadow: 0 20px 40px -15px rgba(73, 17, 28, 0.6), 0 0 20px -5px rgba(73, 17, 28, 0.4);
+  border-color: #49111C;
 }
 
 /* Animación sutil de entrada */
@@ -69,14 +69,14 @@ body {
   animation: fadeInSlide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Botones con brillo dinámico */
+/* Botones con brillo dinámico en rojo bordeaux */
 .btn-bordeaux {
   background: linear-gradient(135deg, #49111C 0%, #2D0A11 100%);
   transition: all 0.3s ease;
-  border: 1px solid rgba(169, 146, 125, 0.3);
+  border: 1px solid rgba(169, 146, 125, 0.4);
 }
 .btn-bordeaux:hover {
   background: linear-gradient(135deg, #5C1624 0%, #3B0D17 100%);
-  box-shadow: 0 0 20px rgba(73, 17, 28, 0.6);
+  box-shadow: 0 0 25px rgba(73, 17, 28, 0.8);
   transform: translateY(-2px);
 }
