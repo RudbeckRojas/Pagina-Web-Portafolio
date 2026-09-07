@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rudbeck - Portafolio | Ing. Realidad Virtual y Juegos</title>
   
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fuente Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Archivo CSS externo -->
   <link rel="stylesheet" href="style.css">
 
   <script>
@@ -28,10 +31,11 @@
 </head>
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
 
+  <!-- Navegación superior con el texto solicitado arriba -->
   <nav class="border-b border-brown/40 bg-black/95 backdrop-blur-md sticky top-0 z-50 w-full">
     <div class="w-full px-8 md:px-16 h-20 flex justify-between items-center">
-      <span class="text-xl md:text-2xl font-extrabold tracking-tight cursor-pointer text-whiteSmoke flex items-center gap-1.5" onclick="cambiarSeccion('inicio')">
-        Rudbeck Arriagada<span class="text-bordeaux">.</span>
+      <span class="text-xs md:text-sm font-semibold tracking-wide cursor-pointer text-taupe uppercase" onclick="cambiarSeccion('inicio')">
+        Portafolio de Práctica Profesional - Universidad Bernardo O'Higgins
       </span>
       
       <div class="flex gap-8 md:gap-12 text-sm font-semibold tracking-wide">
@@ -43,8 +47,10 @@
     </div>
   </nav>
 
+  <!-- Contenedor Principal -->
   <main class="flex-grow w-full">
 
+    <!-- SECCIÓN: INICIO -->
     <div id="inicio" class="seccion activa w-full animate-fade-in">
       <div class="min-h-[calc(100vh-80px)] w-full grid grid-cols-1 lg:grid-cols-12 bg-black overflow-hidden relative">
         
@@ -85,6 +91,7 @@
       </div>
     </div>
 
+    <!-- SECCIÓN: PORTAFOLIO -->
     <div id="portafolio" class="seccion w-full px-8 md:px-16 py-16">
       <div class="mb-12 border-b border-brown/30 pb-6 w-full flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -95,6 +102,7 @@
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+        <!-- Proyecto 1 -->
         <div onclick="abrirProyecto('blender')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="Render N°1 DIORAMA.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
@@ -109,6 +117,7 @@
           </div>
         </div>
 
+        <!-- Proyecto 2 -->
         <div onclick="abrirProyecto('unity')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
@@ -123,6 +132,7 @@
           </div>
         </div>
 
+        <!-- Proyecto 3 -->
         <div onclick="abrirProyecto('arduino')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
@@ -139,6 +149,7 @@
       </div>
     </div>
 
+    <!-- SECCIÓN: DETALLE DE PROYECTO -->
     <div id="detalle-proyecto" class="seccion w-full px-8 md:px-16 py-16">
       <button onclick="cambiarSeccion('portafolio')" class="mb-8 px-5 py-2.5 rounded-lg bg-[#151311] border border-brown/50 text-taupe hover:text-white transition-colors flex items-center gap-2 text-sm font-semibold">
         ← Volver a Proyectos
@@ -146,10 +157,12 @@
 
       <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl shadow-2xl w-full">
         <div id="detalle-contenido">
-          </div>
+          <!-- Inyección dinámica -->
+        </div>
       </div>
     </div>
 
+    <!-- SECCIÓN: SOBRE MÍ -->
     <div id="sobre-mi" class="seccion w-full px-8 md:px-16 py-16">
       <div class="mb-12 border-b border-brown/30 pb-6 w-full">
         <h2 class="text-taupe font-semibold tracking-widest text-sm uppercase mb-2">PERFIL PERSONAL Y PROFESIONAL</h2>
@@ -202,6 +215,7 @@
       </div>
     </div>
 
+    <!-- SECCIÓN: CONTACTO -->
     <div id="contacto" class="seccion w-full px-8 md:px-16 py-16">
       <div class="mb-12 border-b border-brown/30 pb-6 w-full">
         <h2 class="text-taupe font-semibold tracking-widest text-sm uppercase mb-2">COMUNICACIÓN DIRECTA</h2>
@@ -235,8 +249,9 @@
 
   </main>
 
+  <!-- Footer limpio -->
   <footer class="border-t border-brown/40 py-8 text-center text-sm opacity-60 bg-black tracking-wide w-full">
-    <p>© <span id="year"></span> Rudbeck. Portafolio de Práctica Profesional - Universidad Bernardo O'Higgins.</p>
+    <p>© <span id="year"></span> Rudbeck. Todos los derechos reservados.</p>
   </footer>
 
   <script>
