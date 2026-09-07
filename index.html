@@ -30,7 +30,17 @@
 
   <style>
     * { font-family: 'Inter', sans-serif !important; box-sizing: border-box; }
-    body { background-color: #0A0908; color: #F2F4F3; margin: 0; padding: 0; }
+    
+    /* Eliminar barra de desplazamiento fea manteniendo el scroll */
+    html {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE y Edge */
+    }
+    html::-webkit-scrollbar {
+      display: none; /* Chrome, Safari y Opera */
+    }
+
+    body { background-color: #0A0908; color: #F2F4F3; margin: 0; padding: 0; overflow-x: hidden; }
     .seccion { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
     .seccion.activa { display: block; opacity: 1; }
     .card-glow:hover {
@@ -43,7 +53,7 @@
 
   <nav class="border-b border-brown/40 bg-black/95 backdrop-blur-md sticky top-0 z-50 w-full">
     <div class="w-full px-8 md:px-16 h-20 flex justify-between items-center">
-      <span class="text-2xl font-extrabold tracking-tight cursor-pointer text-whiteSmoke flex items-center gap-2" onclick="cambiarSeccion('inicio')">
+      <span class="text-2xl font-extrabold tracking-tight cursor-pointer text-whiteSmoke flex items-center gap-1.5" onclick="cambiarSeccion('inicio')">
         Matías<span class="text-bordeaux">.</span>dev
       </span>
       
