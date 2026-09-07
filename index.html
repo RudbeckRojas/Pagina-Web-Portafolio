@@ -31,7 +31,7 @@
 </head>
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
 
-  <!-- Navegación superior con el texto solicitado arriba -->
+  <!-- Navegación superior -->
   <nav class="border-b border-brown/40 bg-black/95 backdrop-blur-md sticky top-0 z-50 w-full">
     <div class="w-full px-8 md:px-16 h-20 flex justify-between items-center">
       <span class="text-xs md:text-sm font-semibold tracking-wide cursor-pointer text-taupe uppercase" onclick="cambiarSeccion('inicio')">
@@ -98,7 +98,7 @@
           <h2 class="text-taupe font-semibold tracking-widest text-sm uppercase mb-2">PORTAFOLIO UNIVERSITARIO</h2>
           <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight">Trabajos Destacados</h1>
         </div>
-        <p class="text-sm opacity-75 font-light">Haz clic en cualquier proyecto para ver sus renders, video 360 y documentación detallada.</p>
+        <p class="text-sm opacity-75 font-light">Haz clic en cualquier proyecto para ver su carrusel interactivo y documentación detallada.</p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
@@ -113,7 +113,7 @@
           <div class="p-8">
             <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Diorama Habitación Retro Años 90</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Recreación estética vintage con iluminación ambiental, modelado detallado de objetos y recorrido en video 360.</p>
-            <span class="text-xs font-bold text-taupe underline">Ver galería, video 360 y renders →</span>
+            <span class="text-xs font-bold text-taupe underline">Ver carrusel interactivo →</span>
           </div>
         </div>
 
@@ -157,7 +157,7 @@
 
       <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl shadow-2xl w-full">
         <div id="detalle-contenido">
-          <!-- Inyección dinámica -->
+          <!-- Inyección dinámica con Carrusel -->
         </div>
       </div>
     </div>
@@ -249,7 +249,7 @@
 
   </main>
 
-  <!-- Footer limpio -->
+  <!-- Footer -->
   <footer class="border-t border-brown/40 py-8 text-center text-sm opacity-60 bg-black tracking-wide w-full">
     <p>© <span id="year"></span> Rudbeck. Todos los derechos reservados.</p>
   </footer>
@@ -269,15 +269,16 @@
         titulo: "Diorama Habitación Retro Años 90 (Blender)",
         categoria: "MODELADO 3D Y DISEÑO DE ESCENARIOS",
         descripcion: "Proyecto universitario consistente en la creación de un diorama completo inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica mediante el modelado de mobiliario clásico, texturizado detallado e iluminación ambiental.",
-        detalles: "Modelado poligonal optimizado en Blender, aplicando técnicas de iluminación volumétrica y composición de escena para simular un diorama coleccionable. Además de los renders en alta resolución, se integró un recorrido en video 360 para apreciar el espacio tridimensional desde todos los ángulos.",
+        detalles: "Modelado poligonal optimizado en Blender, aplicando técnicas de iluminación volumétrica y composición de escena para simular un diorama coleccionable. Incluye renders individuales y un recorrido en video 360 integrados en un visor continuo.",
         tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Composición de Diorama"],
-        imagenes: [
-          "Render N°1 DIORAMA.png",
-          "Render N°2 DIORAMA.png",
-          "Render N°3 DIORAMA.png",
-          "Render N°4 DIORAMA.png"
-        ],
-        video360: "video-diorama.mp4" 
+        // Combinamos las 4 imágenes y el video en un solo arreglo en bucle
+        elementosCarrusel: [
+          { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Render 1 - Vista General del Diorama" },
+          { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Render 2 - Detalle de Consola y Iluminación" },
+          { tipo: "imagen", src: "Render N°3 DIORAMA.png", titulo: "Render 3 - Área de Trabajo y Computador" },
+          { tipo: "imagen", src: "Render N°4 DIORAMA.png", titulo: "Render 4 - Mobiliario y Cubo de Rubik" },
+          { tipo: "video", src: "video-diorama.mp4", titulo: "Recorrido Interactivo en Video 360°" }
+        ]
       },
       unity: {
         titulo: "Prototipo de Realidad Virtual / Juegos 3D (Unity)",
@@ -285,7 +286,9 @@
         descripcion: "Prototipo interactivo desarrollado en Unity con mecánicas inspiradas en la resolución de desafíos lógicos y exploración espacial.",
         detalles: "Programación en C# estructurada bajo patrones limpios. Incluye gestión de interacciones inmersivas, físicas personalizadas y optimización de rendimiento gráfico para entornos de cascos VR.",
         tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Game Design"],
-        imagenes: ["https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200"]
+        elementosCarrusel: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista del Prototipo en Unity" }
+        ]
       },
       arduino: {
         titulo: "Sistema Electrónico Interactivo (Arduino)",
@@ -293,69 +296,112 @@
         descripcion: "Desarrollo de prototipo físico utilizando microcontroladores para conectar entradas del entorno real con sistemas digitales.",
         detalles: "Programado en C++, integrando sensores analógicos y digitales para resolver problemas de automatización y control de hardware interactivo.",
         tecnologias: ["Arduino IDE", "C++", "Sensores y Actuadores", "Prototipado"],
-        imagenes: ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"]
+        elementosCarrusel: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", titulo: "Esquema y Montaje Físico" }
+        ]
       }
     };
+
+    let indiceActual = 0;
+    let proyectoActualDatos = null;
 
     function abrirProyecto(id) {
       const proj = proyectosData[id];
       if (!proj) return;
-
-      const contenedor = document.getElementById('detalle-contenido');
       
-      let galeriaHTML = proj.imagenes.map(img => `
-        <div class="rounded-xl overflow-hidden border border-brown/40 shadow-md bg-black/40 h-64 md:h-80">
-          <img src="${img}" alt="Render del diorama" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-        </div>
-      `).join('');
+      proyectoActualDatos = proj;
+      indiceActual = 0; // Empezar en el primer elemento
+      renderizarCarrusel();
+      cambiarSeccion('detalle-proyecto');
+    }
 
-      let videoHTML = "";
-      if (proj.video360) {
-        videoHTML = `
-          <div class="mb-10">
-            <h3 class="text-xl font-bold text-whiteSmoke mb-4">Recorrido en Video 360°</h3>
-            <div class="rounded-2xl overflow-hidden border border-brown/40 shadow-xl bg-black aspect-video">
-              <video src="${proj.video360}" controls autoplay muted loop class="w-full h-full object-cover">
-                Tu navegador no soporta la reproducción de video.
-              </video>
-            </div>
+    function renderizarCarrusel() {
+      if (!proyectoActualDatos) return;
+      const contenedor = document.getElementById('detalle-contenido');
+      const elementos = proyectoActualDatos.elementosCarrusel;
+      const actual = elementos[indiceActual];
+
+      // Generar contenido visual según sea imagen o video
+      let contenidoVisual = "";
+      if (actual.tipo === "imagen") {
+        contenidoVisual = `
+          <div class="h-[380px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-brown/40 shadow-xl bg-black relative">
+            <img src="${actual.src}" alt="${actual.titulo}" class="w-full h-full object-contain">
+          </div>
+        `;
+      } else {
+        contenidoVisual = `
+          <div class="h-[380px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-brown/40 shadow-xl bg-black relative">
+            <video src="${actual.src}" controls autoplay muted loop class="w-full h-full object-contain">
+              Tu navegador no soporta la reproducción de video.
+            </video>
           </div>
         `;
       }
 
       contenedor.innerHTML = `
-        <span class="text-xs font-bold text-taupe tracking-widest uppercase mb-2 block">${proj.categoria}</span>
-        <h1 class="text-3xl md:text-4xl font-extrabold text-whiteSmoke mb-6">${proj.titulo}</h1>
+        <span class="text-xs font-bold text-taupe tracking-widest uppercase mb-2 block">${proyectoActualDatos.categoria}</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-whiteSmoke mb-6">${proyectoActualDatos.titulo}</h1>
         
-        ${videoHTML}
+        <!-- VISOR / CARRUSEL INTERACTIVO -->
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-sm font-semibold text-taupe">${actual.titulo}</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-black border border-brown/40 text-whiteSmoke">
+              ${indiceActual + 1} / ${elementos.length}
+            </span>
+          </div>
 
-        <div class="mb-10">
-          <h3 class="text-xl font-bold text-whiteSmoke mb-4">Galería de Renders (${proj.imagenes.length})</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            ${galeriaHTML}
+          ${contenidoVisual}
+
+          <!-- Botones de Control (Anterior / Siguiente en bucle) -->
+          <div class="flex justify-between items-center mt-4">
+            <button onclick="cambiarElementoCarrusel(-1)" class="px-5 py-2.5 rounded-xl bg-black border border-brown/50 text-whiteSmoke hover:bg-brown/20 transition-all font-semibold text-sm flex items-center gap-2">
+              ← Anterior
+            </button>
+            <div class="flex gap-1.5">
+              ${elementos.map((_, i) => `<span class="h-2 w-2 rounded-full transition-all ${i === indiceActual ? 'bg-taupe w-6' : 'bg-brown/50'}"></span>`).join('')}
+            </div>
+            <button onclick="cambiarElementoCarrusel(1)" class="px-5 py-2.5 rounded-xl bg-black border border-brown/50 text-whiteSmoke hover:bg-brown/20 transition-all font-semibold text-sm flex items-center gap-2">
+              Siguiente →
+            </button>
           </div>
         </div>
 
+        <!-- Descripción y Documentación -->
         <div class="grid md:grid-cols-2 gap-8 mb-8">
           <div>
             <h3 class="text-xl font-bold text-whiteSmoke mb-3">Descripción General</h3>
-            <p class="text-base opacity-80 leading-relaxed font-light">${proj.descripcion}</p>
+            <p class="text-base opacity-80 leading-relaxed font-light">${proyectoActualDatos.descripcion}</p>
           </div>
           <div>
             <h3 class="text-xl font-bold text-whiteSmoke mb-3">Proceso Técnico y Documentación</h3>
-            <p class="text-base opacity-80 leading-relaxed font-light">${proj.detalles}</p>
+            <p class="text-base opacity-80 leading-relaxed font-light">${proyectoActualDatos.detalles}</p>
           </div>
         </div>
 
         <div class="border-t border-brown/30 pt-6">
           <h4 class="text-sm font-semibold text-taupe mb-3 uppercase tracking-wider">Tecnologías y Herramientas Utilizadas:</h4>
           <div class="flex flex-wrap gap-2">
-            ${proj.tecnologias.map(t => `<span class="px-3 py-1.5 rounded-lg bg-black text-whiteSmoke border border-brown/50 text-xs font-semibold">${t}</span>`).join('')}
+            ${proyectoActualDatos.tecnologias.map(t => `<span class="px-3 py-1.5 rounded-lg bg-black text-whiteSmoke border border-brown/50 text-xs font-semibold">${t}</span>`).join('')}
           </div>
         </div>
       `;
+    }
 
-      cambiarSeccion('detalle-proyecto');
+    function cambiarElementoCarrusel(direccion) {
+      if (!proyectoActualDatos) return;
+      const total = proyectoActualDatos.elementosCarrusel.length;
+      indiceActual += direccion;
+
+      // Bucle infinito: si pasa del último, vuelve al primero; si baja del primero, va al último
+      if (indiceActual >= total) {
+        indiceActual = 0;
+      } else if (indiceActual < 0) {
+        indiceActual = total - 1;
+      }
+
+      renderizarCarrusel();
     }
   </script>
 </body>
