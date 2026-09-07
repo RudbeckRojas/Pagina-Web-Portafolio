@@ -91,11 +91,11 @@
           <h2 class="text-taupe font-semibold tracking-widest text-sm uppercase mb-2">PORTAFOLIO UNIVERSITARIO</h2>
           <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight">Trabajos Destacados</h1>
         </div>
-        <p class="text-sm opacity-75 font-light">Modelado 3D en Blender • Videojuegos en Unity • Prototipos Arduino</p>
+        <p class="text-sm opacity-75 font-light">Haz clic en cualquier proyecto para ver sus renders y documentación detallada.</p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
+        <div onclick="abrirProyecto('blender')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
@@ -105,14 +105,11 @@
           <div class="p-8">
             <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Modelado de Personaje Sci-Fi</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Esculpido digital detallado, texturizado PBR y optimización de malla orientada a motores gráficos.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">ZBrush / Blender</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">Substance Painter</span>
-            </div>
+            <span class="text-xs font-bold text-taupe underline">Ver detalles y renders →</span>
           </div>
         </div>
 
-        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
+        <div onclick="abrirProyecto('unity')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
@@ -122,14 +119,11 @@
           <div class="p-8">
             <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Prototipo Videojuego 3D</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Programación de mecánicas de movimiento en C#, control de cámaras fluidas y gestión de físicas de juego.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">Unity 3D</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">C# Scripting</span>
-            </div>
+            <span class="text-xs font-bold text-taupe underline">Ver detalles y código →</span>
           </div>
         </div>
 
-        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
+        <div onclick="abrirProyecto('arduino')" class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden shadow-xl card-glow">
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
@@ -139,11 +133,20 @@
           <div class="p-8">
             <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Sistema Electrónico Interactivo</h3>
             <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Integración de sensores analógicos y digitales con microcontroladores programados en C++.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">Arduino IDE</span>
-              <span class="text-xs px-2.5 py-1 rounded bg-black text-whiteSmoke/80 border border-brown/40">C++ / Sensores</span>
-            </div>
+            <span class="text-xs font-bold text-taupe underline">Ver documentación →</span>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="detalle-proyecto" class="seccion w-full px-8 md:px-16 py-16">
+      <button onclick="cambiarSeccion('portafolio')" class="mb-8 px-5 py-2.5 rounded-lg bg-[#151311] border border-brown/50 text-taupe hover:text-white transition-colors flex items-center gap-2 text-sm font-semibold">
+        ← Volver a Proyectos
+      </button>
+
+      <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl shadow-2xl w-full">
+        <div id="detalle-contenido">
+          {/* Aquí se inyecta dinámicamente la información del proyecto seleccionado */}
         </div>
       </div>
     </div>
@@ -239,6 +242,69 @@
       const target = document.getElementById(id);
       target.classList.add('activa');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Datos de los casos de estudio detallados
+    const proyectosData = {
+      blender: {
+        titulo: "Modelado de Personaje Sci-Fi (Blender)",
+        categoria: "MODELADO 3D Y TEXTURIZADO",
+        imagen: "https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=1200",
+        descripcion: "Proyecto universitario enfocado en la creación integral de un personaje de ciencia ficción optimizado para motores de videojuegos.",
+        detalles: "Se realizó el esculpido orgánico e inorgánico en Blender, seguido de una retopología manual para asegurar una baja cantidad de polígonos sin perder volumen ni silueta. El texturizado se desarrolló bajo el flujo PBR (Albedo, Normal, Roughness, Metallic) utilizando mapas de alta definición horneados.",
+        tecnologias: ["Blender", "ZBrush", "Substance Painter", "PBR Shading"]
+      },
+      unity: {
+        titulo: "Prototipo de Videojuego 3D (Unity)",
+        categoria: "DESARROLLO DE VIDEOJUEGOS",
+        imagen: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200",
+        descripcion: "Desarrollo completo de un prototipo interactivo en Unity implementando mecánicas de movimiento avanzadas y sistemas de físicas en C#.",
+        detalles: "El núcleo del proyecto incluye un controlador de personaje customizado, manejo de estados finitos (FSM) para la inteligencia artificial de enemigos básicos, y optimización de UI. Se aplicaron buenas prácticas de programación orientada a objetos y principios SOLID.",
+        tecnologias: ["Unity Engine", "C# Scripting", "Game Physics", "UI/UX Design"]
+      },
+      arduino: {
+        titulo: "Sistema Electrónico Interactivo (Arduino)",
+        categoria: "HARDWARE Y PROTOTIPADO",
+        imagen: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
+        descripcion: "Diseño y programación de un circuito electrónico basado en Arduino para la lectura de sensores y control de actuadores en tiempo real.",
+        detalles: "Incluyó el diseño esquemático previo, soldadura de componentes en protoboard/PCB y programación en C++ utilizando interrupciones por hardware y filtros digitales para la reducción de ruido en las señales análogas.",
+        tecnologias: ["Arduino IDE", "C++", "Sensores Analógicos", "Circuitos Electrónicos"]
+      }
+    };
+
+    function abrirProyecto(id) {
+      const proj = proyectosData[id];
+      if (!proj) return;
+
+      const contenedor = document.getElementById('detalle-contenido');
+      contenedor.innerHTML = `
+        <span class="text-xs font-bold text-taupe tracking-widest uppercase mb-2 block">${proj.categoria}</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-whiteSmoke mb-6">${proj.titulo}</h1>
+        
+        <div class="h-[350px] md:h-[450px] rounded-2xl overflow-hidden mb-8 border border-brown/40 shadow-lg">
+          <img src="${proj.imagen}" alt="${proj.titulo}" class="w-full h-full object-cover">
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3">Descripción General</h3>
+            <p class="text-base opacity-80 leading-relaxed font-light">${proj.descripcion}</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3">Proceso Técnico y Documentación</h3>
+            <p class="text-base opacity-80 leading-relaxed font-light">${proj.detalles}</p>
+          </div>
+        </div>
+
+        <div class="border-t border-brown/30 pt-6">
+          <h4 class="text-sm font-semibold text-taupe mb-3 uppercase tracking-wider">Tecnologías y Herramientas Utilizadas:</h4>
+          <div class="flex flex-wrap gap-2">
+            ${proj.tecnologias.map(t => `<span class="px-3 py-1.5 rounded-lg bg-black text-whiteSmoke border border-brown/50 text-xs font-semibold">${t}</span>`).join('')}
+          </div>
+        </div>
+      `;
+
+      cambiarSeccion('detalle-proyecto');
     }
   </script>
 </body>
