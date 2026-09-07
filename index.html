@@ -6,7 +6,6 @@
   <title>Matías - Portafolio</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script>
@@ -34,13 +33,13 @@
 </head>
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke">
 
-  <nav class="border-b border-brown bg-black">
+  <nav class="border-b border-brown bg-black sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
       <span class="text-2xl font-bold tracking-tighter cursor-pointer text-whiteSmoke" onclick="cambiarSeccion('inicio')">
         Matías<span class="text-bordeaux">.</span>
       </span>
       
-      <div class="flex gap-4 text-sm font-medium">
+      <div class="flex gap-6 text-sm font-medium">
         <button onclick="cambiarSeccion('inicio')" class="text-whiteSmoke hover:text-taupe transition-colors">Inicio</button>
         <button onclick="cambiarSeccion('portafolio')" class="text-whiteSmoke hover:text-taupe transition-colors">Proyectos</button>
         <button onclick="cambiarSeccion('contacto')" class="text-whiteSmoke hover:text-taupe transition-colors">Contacto</button>
@@ -51,28 +50,29 @@
   <main class="max-w-6xl mx-auto px-6 py-8 min-h-[calc(100vh-160px)]">
 
     <div id="inicio" class="seccion activa">
-      <div class="relative min-h-[80vh] flex flex-col justify-center rounded-3xl overflow-hidden border border-brown/40 my-4">
+      <div class="relative min-h-[75vh] flex flex-col justify-center rounded-3xl overflow-hidden border border-brown/40 my-4 shadow-2xl">
         
         <div class="absolute inset-0 z-0 bg-black">
-          <img src="foto-perfil.jpg" alt="Fondo" class="absolute inset-0 w-full h-full object-cover object-center opacity-30 grayscale-[50%]">
-          <div class="absolute inset-0 mix-blend-color opacity-50 z-10 bg-taupe"></div>
-          <div class="absolute inset-0 z-20" style="background: linear-gradient(to right, #0A0908 35%, #0A0908D9 65%, transparent 100%)"></div>
+          <img src="foto-perfil.jpg" alt="Matías" class="absolute inset-0 w-full h-full object-cover object-center md:object-right opacity-35 grayscale-[30%]">
+          <div class="absolute inset-0 mix-blend-color opacity-40 z-10 bg-taupe"></div>
+          <div class="absolute inset-0 z-20" style="background: linear-gradient(to right, #0A0908 40%, #0A0908E6 70%, transparent 100%)"></div>
+          <div class="absolute inset-0 z-20" style="background: linear-gradient(to top, #0A0908 0%, transparent 15%, transparent 85%, #0A0908 100%)"></div>
         </div>
 
-        <div class="relative z-30 max-w-4xl p-8 md:p-16">
+        <div class="relative z-30 max-w-3xl p-8 md:p-16">
           <h2 class="text-xl md:text-2xl mb-4 font-medium text-taupe">
             Hola, soy <span class="font-bold text-white">Matías</span>
           </h2>
-          <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8 text-whiteSmoke">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-whiteSmoke">
             Diseño <span class="text-taupe">Modelos 3D</span>,<br />
             Programo <span class="text-bordeaux">Mecánicas</span> y<br />
             Conecto <span class="text-brown">Hardware</span>.
           </h1>
-          <p class="text-xl opacity-80 mb-10 max-w-2xl text-whiteSmoke">
-            Busco mi primera práctica profesional para aplicar mis conocimientos técnicos y creativos en proyectos reales.
+          <p class="text-lg opacity-80 mb-8 max-w-xl text-whiteSmoke">
+            Estudiante universitario en búsqueda de mi primera práctica profesional. Revisa mis proyectos enfocados en Blender, Unity y Arduino.
           </p>
           <div class="flex gap-4">
-            <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-md font-bold bg-bordeaux text-whiteSmoke hover:opacity-90 transition-opacity">
+            <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-md font-bold bg-bordeaux text-whiteSmoke hover:opacity-90 transition-all hover:-translate-y-0.5">
               Ver mis Proyectos
             </button>
           </div>
@@ -82,49 +82,69 @@
 
     <div id="portafolio" class="seccion">
       <h1 class="text-4xl font-bold mb-4 text-whiteSmoke">Mis Proyectos</h1>
-      <p class="text-lg opacity-80 mb-12">Un vistazo a mis trabajos universitarios.</p>
+      <p class="text-lg opacity-80 mb-12">Trabajos universitarios de modelado, desarrollo y prototipado.</p>
       
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#11100F] border border-brown rounded-lg overflow-hidden group">
-          <div class="h-48 bg-gray-800 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500">
-            <span class="absolute top-3 left-3 bg-black text-taupe border border-taupe px-2 py-1 text-xs font-bold rounded">BLENDER</span>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-[#11100F] border border-brown rounded-lg overflow-hidden group shadow-lg">
+          <div class="h-52 bg-gray-900 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-black/80 text-taupe border border-taupe px-3 py-1 text-xs font-bold rounded">BLENDER</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Guerrero Sci-Fi</h3>
-            <p class="text-sm opacity-70">Modelado y texturizado de personaje optimizado.</p>
+            <h3 class="text-xl font-bold mb-2">Modelado 3D Personaje</h3>
+            <p class="text-sm opacity-70 mb-4">Esculpido, texturizado PBR y optimización para entorno de juego.</p>
           </div>
         </div>
 
-        <div class="bg-[#11100F] border border-brown rounded-lg overflow-hidden group">
-          <div class="h-48 bg-gray-800 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500">
-            <span class="absolute top-3 left-3 bg-black text-taupe border border-taupe px-2 py-1 text-xs font-bold rounded">UNITY</span>
+        <div class="bg-[#11100F] border border-brown rounded-lg overflow-hidden group shadow-lg">
+          <div class="h-52 bg-gray-900 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-black/80 text-taupe border border-taupe px-3 py-1 text-xs font-bold rounded">UNITY</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Motor de Plataformas</h3>
-            <p class="text-sm opacity-70">Desarrollo de físicas en C# para personaje 3D.</p>
+            <h3 class="text-xl font-bold mb-2">Prototipo Videojuego 3D</h3>
+            <p class="text-sm opacity-70 mb-4">Implementación de mecánicas de movimiento y físicas personalizadas en C#.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#11100F] border border-brown rounded-lg overflow-hidden group shadow-lg">
+          <div class="h-52 bg-gray-900 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-black/80 text-taupe border border-taupe px-3 py-1 text-xs font-bold rounded">ARDUINO</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Sistema Electrónico</h3>
+            <p class="text-sm opacity-70 mb-4">Prototipado con sensores y lógica programada en microcontroladores.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div id="contacto" class="seccion">
-      <h1 class="text-4xl font-bold mb-8 text-whiteSmoke">Contacto</h1>
-      <div class="bg-[#11100F] border border-brown p-8 rounded-lg max-w-2xl">
-        <p class="text-lg mb-6"><i class="fa-solid fa-envelope text-taupe mr-3"></i> estudiante@universidad.edu</p>
-        <p class="text-lg mb-6"><i class="fa-solid fa-briefcase text-taupe mr-3"></i> Buscando práctica profesional</p>
-        <div class="flex gap-4 mt-8">
-          <a href="#" class="p-4 border border-brown rounded-lg hover:bg-brown/20"><i class="fa-brands fa-linkedin text-xl"></i></a>
-          <a href="#" class="p-4 border border-brown rounded-lg hover:bg-brown/20"><i class="fa-brands fa-github text-xl"></i></a>
+      <h1 class="text-4xl font-bold mb-4 text-whiteSmoke">Contacto</h1>
+      <p class="text-lg opacity-80 mb-8">¿Buscas alumno en práctica? Hablemos.</p>
+      
+      <div class="bg-[#11100F] border border-brown p-8 rounded-xl max-w-xl shadow-lg">
+        <div class="space-y-4 mb-8">
+          <p class="text-lg flex items-center gap-3"><i class="fa-solid fa-envelope text-taupe"></i> tu-correo@universidad.edu</p>
+          <p class="text-lg flex items-center gap-3"><i class="fa-solid fa-briefcase text-taupe"></i> Disponibilidad para Práctica Profesional</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="p-4 border border-brown rounded-lg hover:bg-brown/20 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+          <a href="#" class="p-4 border border-brown rounded-lg hover:bg-brown/20 transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
         </div>
       </div>
     </div>
 
   </main>
 
+  <footer class="border-t border-brown py-6 text-center text-sm opacity-60">
+    <p>© <span id="year"></span> Matías. Portafolio de Práctica Profesional.</p>
+  </footer>
+
   <script>
-    // Lógica ultra simple para cambiar de pestañas
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     function cambiarSeccion(id) {
       document.querySelectorAll('.seccion').forEach(el => el.classList.remove('activa'));
       document.getElementById(id).classList.add('activa');
