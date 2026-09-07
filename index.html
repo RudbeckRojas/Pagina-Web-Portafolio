@@ -6,6 +6,7 @@
   <title>Matías - Portafolio</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script>
@@ -20,7 +21,7 @@
             brown: '#5E503F'
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
           }
         }
       }
@@ -28,7 +29,8 @@
   </script>
 
   <style>
-    body { background-color: #0A0908; color: #F2F4F3; font-family: 'Inter', sans-serif; }
+    * { font-family: 'Inter', sans-serif !important; }
+    body { background-color: #0A0908; color: #F2F4F3; }
     .seccion { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
     .seccion.activa { display: block; opacity: 1; }
   </style>
@@ -36,15 +38,15 @@
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
 
   <nav class="border-b border-brown/40 bg-black/90 backdrop-blur-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-8 md:px-12 h-20 flex justify-between items-center">
       <span class="text-2xl font-bold tracking-tight cursor-pointer text-whiteSmoke" onclick="cambiarSeccion('inicio')">
         Matías<span class="text-bordeaux">.</span>
       </span>
       
-      <div class="flex gap-8 text-sm font-medium tracking-wide">
-        <button onclick="cambiarSeccion('inicio')" class="text-whiteSmoke hover:text-taupe transition-colors">Inicio</button>
-        <button onclick="cambiarSeccion('portafolio')" class="text-whiteSmoke hover:text-taupe transition-colors">Proyectos</button>
-        <button onclick="cambiarSeccion('contacto')" class="text-whiteSmoke hover:text-taupe transition-colors">Contacto</button>
+      <div class="flex gap-10 text-sm font-medium tracking-wide">
+        <button onclick="cambiarSeccion('inicio')" class="text-whiteSmoke hover:text-taupe transition-colors py-2">Inicio</button>
+        <button onclick="cambiarSeccion('portafolio')" class="text-whiteSmoke hover:text-taupe transition-colors py-2">Proyectos</button>
+        <button onclick="cambiarSeccion('contacto')" class="text-whiteSmoke hover:text-taupe transition-colors py-2">Contacto</button>
       </div>
     </div>
   </nav>
