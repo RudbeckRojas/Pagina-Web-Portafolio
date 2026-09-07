@@ -1,4 +1,3 @@
-
 * {
   font-family: 'Inter', sans-serif !important;
   box-sizing: border-box;
@@ -33,10 +32,10 @@ body {
   transform: translateY(0);
 }
 
-
 .card-glow {
   position: relative;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
 }
 .card-glow::after {
   content: '';
@@ -52,7 +51,6 @@ body {
   box-shadow: 0 20px 40px -15px rgba(73, 17, 28, 0.4), 0 0 20px -5px rgba(169, 146, 125, 0.2);
   border-color: #A9927D;
 }
-
 
 @keyframes fadeInSlide {
   from { opacity: 0; transform: translateY(20px); }
