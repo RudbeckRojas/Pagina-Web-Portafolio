@@ -18,6 +18,9 @@
             whiteSmoke: '#F2F4F3',
             taupe: '#A9927D',
             brown: '#5E503F'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
           }
         }
       }
@@ -25,20 +28,20 @@
   </script>
 
   <style>
-    body { background-color: #0A0908; color: #F2F4F3; font-family: sans-serif; }
+    body { background-color: #0A0908; color: #F2F4F3; font-family: 'Inter', sans-serif; }
     .seccion { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
     .seccion.activa { display: block; opacity: 1; }
   </style>
 </head>
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
 
-  <nav class="border-b border-brown/60 bg-black/90 backdrop-blur-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
-      <span class="text-2xl font-bold tracking-tighter cursor-pointer text-whiteSmoke" onclick="cambiarSeccion('inicio')">
+  <nav class="border-b border-brown/40 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
+      <span class="text-2xl font-bold tracking-tight cursor-pointer text-whiteSmoke" onclick="cambiarSeccion('inicio')">
         Matías<span class="text-bordeaux">.</span>
       </span>
       
-      <div class="flex gap-8 text-sm font-medium">
+      <div class="flex gap-8 text-sm font-medium tracking-wide">
         <button onclick="cambiarSeccion('inicio')" class="text-whiteSmoke hover:text-taupe transition-colors">Inicio</button>
         <button onclick="cambiarSeccion('portafolio')" class="text-whiteSmoke hover:text-taupe transition-colors">Proyectos</button>
         <button onclick="cambiarSeccion('contacto')" class="text-whiteSmoke hover:text-taupe transition-colors">Contacto</button>
@@ -46,102 +49,104 @@
     </div>
   </nav>
 
-  <main class="max-w-7xl mx-auto px-6 md:px-12 py-12 flex-grow w-full">
+  <main class="flex-grow w-full">
 
     <div id="inicio" class="seccion activa">
-      <div class="relative min-h-[75vh] flex flex-col justify-center rounded-3xl overflow-hidden border border-brown/40 shadow-2xl bg-black">
+      <div class="relative min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden bg-black">
         
         <div class="absolute inset-0 z-0">
-          <img src="foto-perfil.jpeg" alt="Matías" class="absolute inset-0 w-full h-full object-cover object-center md:object-[85%_30%] opacity-40 grayscale-[25%]">
-          <div class="absolute inset-0 mix-blend-color opacity-30 z-10 bg-taupe"></div>
-          <div class="absolute inset-0 z-20" style="background: linear-gradient(to right, #0A0908 30%, #0A0908F2 65%, #0A090866 100%)"></div>
-          <div class="absolute inset-0 z-20" style="background: linear-gradient(to top, #0A0908 0%, transparent 15%, transparent 85%, #0A0908 100%)"></div>
+          <img src="foto-perfil.jpeg" alt="Matías" class="absolute inset-0 w-full h-full object-cover object-[75%_25%] md:object-[85%_20%] opacity-50 grayscale-[20%]">
+          <div class="absolute inset-0 mix-blend-color opacity-25 z-10 bg-taupe"></div>
+          <div class="absolute inset-0 z-20" style="background: linear-gradient(to right, #0A0908 40%, #0A0908E6 65%, #0A090859 100%)"></div>
+          <div class="absolute inset-0 z-20" style="background: linear-gradient(to top, #0A0908 0%, transparent 10%, transparent 90%, #0A0908 100%)"></div>
         </div>
 
-        <div class="relative z-30 max-w-2xl p-8 md:p-16 lg:p-20">
-          <h2 class="text-xl md:text-2xl mb-4 font-medium text-taupe tracking-wide">
-            Hola, soy <span class="font-bold text-white">Matías</span>
-          </h2>
-          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 text-whiteSmoke">
-            Diseño <span class="text-taupe">Modelos 3D</span>,<br />
-            Programo <span class="text-bordeaux">Mecánicas</span> y<br />
-            Conecto <span class="text-brown">Hardware</span>.
-          </h1>
-          <p class="text-lg opacity-85 mb-8 max-w-lg text-whiteSmoke leading-relaxed">
-            Estudiante universitario en búsqueda de mi primera práctica profesional. Revisa mis proyectos enfocados en Blender, Unity y Arduino.
-          </p>
-          <div class="flex gap-4">
-            <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-md font-bold bg-bordeaux text-whiteSmoke hover:opacity-90 transition-all shadow-lg hover:-translate-y-0.5">
-              Ver mis Proyectos
-            </button>
+        <div class="relative z-30 max-w-7xl mx-auto px-6 md:px-12 w-full py-16">
+          <div class="max-w-2xl">
+            <h2 class="text-lg md:text-xl mb-4 font-medium text-taupe tracking-wider uppercase">
+              Hola, soy <span class="font-bold text-white">Matías</span>
+            </h2>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-whiteSmoke tracking-tight">
+              Diseño <span class="text-taupe font-semibold">Modelos 3D</span>,<br />
+              Programo <span class="text-bordeaux font-semibold">Mecánicas</span> y<br />
+              Conecto <span class="text-brown font-semibold">Hardware</span>.
+            </h1>
+            <p class="text-lg md:text-xl opacity-80 mb-10 text-whiteSmoke leading-relaxed font-light">
+              Estudiante universitario en búsqueda de mi primera práctica profesional. Explora mis trabajos en Blender, Unity y Arduino.
+            </p>
+            <div class="flex gap-4">
+              <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-lg font-bold bg-bordeaux text-whiteSmoke hover:bg-opacity-90 transition-all shadow-xl hover:-translate-y-0.5 tracking-wide">
+                Ver mis Proyectos
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="portafolio" class="seccion">
-      <div class="mb-10">
-        <h1 class="text-4xl font-bold mb-3 text-whiteSmoke">Mis Proyectos</h1>
-        <p class="text-lg opacity-80">Trabajos universitarios de modelado, desarrollo y prototipado.</p>
+    <div id="portafolio" class="seccion max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <div class="mb-12 border-b border-brown/30 pb-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-whiteSmoke tracking-tight">Mis Proyectos</h1>
+        <p class="text-lg opacity-75 font-light">Trabajos universitarios de modelado, desarrollo y prototipado.</p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-[#11100F] border border-brown rounded-xl overflow-hidden group shadow-lg">
-          <div class="h-52 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 bg-black/90 text-taupe border border-taupe px-3 py-1 text-xs font-bold rounded">BLENDER</span>
+        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden group shadow-xl transition-transform hover:-translate-y-1 duration-300">
+          <div class="h-56 bg-gray-900 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider">BLENDER</span>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Modelado 3D Personaje</h3>
-            <p class="text-sm opacity-70 mb-4">Esculpido, texturizado PBR y optimización para entorno de juego.</p>
-          </div>
-        </div>
-
-        <div class="bg-[#11100F] border border-brown rounded-xl overflow-hidden group shadow-lg">
-          <div class="h-52 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 bg-black/90 text-taupe border border-taupe px-3 py-1 text-xs font-bold rounded">UNITY</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Prototipo Videojuego 3D</h3>
-            <p class="text-sm opacity-70 mb-4">Implementación de mecánicas de movimiento y físicas personalizadas en C#.</p>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Modelado 3D Personaje</h3>
+            <p class="text-sm opacity-70 leading-relaxed font-light">Esculpido, texturizado PBR y optimización de malla para entorno de juego en tiempo real.</p>
           </div>
         </div>
 
-        <div class="bg-[#11100F] border border-brown rounded-xl overflow-hidden group shadow-lg">
-          <div class="h-52 bg-gray-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-            <span class="absolute top-3 left-3 bg-black/90 text-taupe border border-taupe px-3 py-1 text-xs font-bold rounded">ARDUINO</span>
+        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden group shadow-xl transition-transform hover:-translate-y-1 duration-300">
+          <div class="h-56 bg-gray-900 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider">UNITY</span>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Sistema Electrónico</h3>
-            <p class="text-sm opacity-70 mb-4">Prototipado con sensores y lógica programada en microcontroladores.</p>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Prototipo Videojuego 3D</h3>
+            <p class="text-sm opacity-70 leading-relaxed font-light">Implementación de mecánicas de movimiento, colisiones y físicas personalizadas usando C#.</p>
+          </div>
+        </div>
+
+        <div class="bg-[#151311] border border-brown/50 rounded-2xl overflow-hidden group shadow-xl transition-transform hover:-translate-y-1 duration-300">
+          <div class="h-56 bg-gray-900 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider">ARDUINO</span>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Sistema Electrónico</h3>
+            <p class="text-sm opacity-70 leading-relaxed font-light">Prototipado con sensores analógicos, actuadores y lógica programada en microcontroladores.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="contacto" class="seccion">
-      <div class="mb-10">
-        <h1 class="text-4xl font-bold mb-3 text-whiteSmoke">Contacto</h1>
-        <p class="text-lg opacity-80">¿Buscas alumno en práctica? Hablemos.</p>
+    <div id="contacto" class="seccion max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <div class="mb-12 border-b border-brown/30 pb-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-whiteSmoke tracking-tight">Contacto</h1>
+        <p class="text-lg opacity-75 font-light">¿Buscas alumno en práctica? Hablemos de cómo puedo aportar a tu equipo.</p>
       </div>
       
-      <div class="bg-[#11100F] border border-brown p-8 md:p-10 rounded-2xl max-w-xl shadow-lg">
-        <div class="space-y-4 mb-8">
-          <p class="text-lg flex items-center gap-3"><i class="fa-solid fa-envelope text-taupe"></i> tu-correo@universidad.edu</p>
-          <p class="text-lg flex items-center gap-3"><i class="fa-solid fa-briefcase text-taupe"></i> Disponibilidad para Práctica Profesional</p>
+      <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl max-w-2xl shadow-xl">
+        <div class="space-y-6 mb-10">
+          <p class="text-lg flex items-center gap-4"><i class="fa-solid fa-envelope text-taupe text-xl"></i> <span class="opacity-90">tu-correo@universidad.edu</span></p>
+          <p class="text-lg flex items-center gap-4"><i class="fa-solid fa-briefcase text-taupe text-xl"></i> <span class="opacity-90">Disponibilidad para Práctica Profesional</span></p>
         </div>
         <div class="flex gap-4">
-          <a href="#" class="p-4 border border-brown rounded-lg hover:bg-brown/20 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
-          <a href="#" class="p-4 border border-brown rounded-lg hover:bg-brown/20 transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+          <a href="#" class="p-4 bg-black border border-brown/60 rounded-xl hover:bg-brown/20 transition-all text-whiteSmoke"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+          <a href="#" class="p-4 bg-black border border-brown/60 rounded-xl hover:bg-brown/20 transition-all text-whiteSmoke"><i class="fa-brands fa-github text-2xl"></i></a>
         </div>
       </div>
     </div>
 
   </main>
 
-  <footer class="border-t border-brown/60 py-6 text-center text-sm opacity-60 bg-black mt-12">
+  <footer class="border-t border-brown/40 py-8 text-center text-sm opacity-60 bg-black tracking-wide">
     <p>© <span id="year"></span> Matías. Portafolio de Práctica Profesional.</p>
   </footer>
 
