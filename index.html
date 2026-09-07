@@ -7,7 +7,6 @@
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
 
@@ -67,7 +66,8 @@
           
           <div class="flex flex-wrap gap-4">
             <button onclick="cambiarSeccion('portafolio')" class="px-8 py-4 rounded-xl font-bold btn-bordeaux text-whiteSmoke tracking-wide flex items-center gap-3">
-              <i class="fa-solid fa-code"></i> Ver mis Proyectos
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+              Ver mis Proyectos
             </button>
             <button onclick="cambiarSeccion('sobre-mi')" class="px-8 py-4 rounded-xl font-bold bg-transparent border border-taupe text-taupe hover:bg-taupe/10 transition-all tracking-wide">
               Conocer más
@@ -99,7 +99,7 @@
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
-              <i class="fa-solid fa-cube text-bordeaux"></i> BLENDER 3D
+              <svg class="w-3.5 h-3.5 fill-current text-bordeaux" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg> BLENDER 3D
             </div>
           </div>
           <div class="p-8">
@@ -116,7 +116,7 @@
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
-              <i class="fa-solid fa-gamepad text-taupe"></i> UNITY ENGINE
+              <svg class="w-3.5 h-3.5 fill-current text-taupe" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg> UNITY ENGINE
             </div>
           </div>
           <div class="p-8">
@@ -133,7 +133,7 @@
           <div class="h-60 bg-gray-900 relative overflow-hidden">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
             <div class="absolute top-4 left-4 bg-black/90 text-taupe border border-taupe/40 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2">
-              <i class="fa-solid fa-microchip text-brown"></i> ARDUINO HARDWARE
+              <svg class="w-3.5 h-3.5 fill-current text-brown" viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 7h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10z"/></svg> ARDUINO HARDWARE
             </div>
           </div>
           <div class="p-8">
@@ -171,22 +171,22 @@
 
         <div class="grid grid-cols-2 gap-4">
           <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
-            <i class="fa-solid fa-cube text-3xl text-taupe mb-3"></i>
+            <svg class="w-8 h-8 fill-current text-taupe mb-3" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Modelado 3D</h3>
             <p class="text-sm opacity-70 font-light">Blender, texturizado, UV Mapping y optimización.</p>
           </div>
           <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
-            <i class="fa-solid fa-gamepad text-3xl text-bordeaux mb-3"></i>
+            <svg class="w-8 h-8 fill-current text-bordeaux mb-3" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Game Dev</h3>
             <p class="text-sm opacity-70 font-light">Unity Engine y scripting avanzado en C#.</p>
           </div>
           <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
-            <i class="fa-solid fa-code text-3xl text-whiteSmoke mb-3"></i>
+            <svg class="w-8 h-8 fill-current text-whiteSmoke mb-3" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Lógica & Código</h3>
             <p class="text-sm opacity-70 font-light">Estructuras limpias, patrones y resolución de problemas.</p>
           </div>
           <div class="bg-[#151311] border border-brown/40 p-6 rounded-2xl card-glow">
-            <i class="fa-solid fa-microchip text-3xl text-brown mb-3"></i>
+            <svg class="w-8 h-8 fill-current text-brown mb-3" viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 7h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10z"/></svg>
             <h3 class="text-xl font-bold mb-1 text-whiteSmoke">Hardware</h3>
             <p class="text-sm opacity-70 font-light">Arduino, circuitos y prototipado electrónico.</p>
           </div>
@@ -203,12 +203,24 @@
       
       <div class="bg-[#151311] border border-brown/50 p-8 md:p-12 rounded-3xl max-w-2xl shadow-xl card-glow">
         <div class="space-y-6 mb-10">
-          <p class="text-lg flex items-center gap-4"><i class="fa-solid fa-envelope text-taupe text-xl"></i> <span class="opacity-90">tu-correo@universidad.edu</span></p>
-          <p class="text-lg flex items-center gap-4"><i class="fa-solid fa-briefcase text-taupe text-xl"></i> <span class="opacity-90">Disponibilidad Inmediata (Práctica Profesional)</span></p>
+          <p class="text-lg flex items-center gap-4">
+            <svg class="w-6 h-6 fill-current text-taupe flex-shrink-0" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span class="opacity-90">tu-correo@universidad.edu</span>
+          </p>
+          <p class="text-lg flex items-center gap-4">
+            <svg class="w-6 h-6 fill-current text-taupe flex-shrink-0" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 15H4V8h16v11z"/></svg>
+            <span class="opacity-90">Disponibilidad Inmediata (Práctica Profesional)</span>
+          </p>
         </div>
         <div class="flex gap-4">
-          <a href="#" class="p-4 bg-black border border-brown/60 rounded-xl hover:bg-brown/20 transition-all text-whiteSmoke"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-          <a href="#" class="p-4 bg-black border border-brown/60 rounded-xl hover:bg-brown/20 transition-all text-whiteSmoke"><i class="fa-brands fa-github text-2xl"></i></a>
+          <a href="#" class="p-4 bg-black border border-brown/60 rounded-xl hover:bg-brown/20 transition-all text-whiteSmoke flex items-center gap-2">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="#" class="p-4 bg-black border border-brown/60 rounded-xl hover:bg-brown/20 transition-all text-whiteSmoke flex items-center gap-2">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
     </div>
