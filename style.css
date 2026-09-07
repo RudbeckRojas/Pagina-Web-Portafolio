@@ -1,9 +1,14 @@
+/* ==========================================
+   ESTILOS PROFESIONALES - PORTAFOLIO RUDBECK
+   ========================================== */
+
 * {
   font-family: 'Inter', sans-serif !important;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
+/* Ocultar barra de desplazamiento por completo */
 html, body {
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
@@ -20,6 +25,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Sistema de transiciones de secciones */
 .seccion {
   display: none;
   opacity: 0;
@@ -32,6 +38,7 @@ body {
   transform: translateY(0);
 }
 
+/* Efectos de brillo y profundidad en tarjetas (Hover 3D) */
 .card-glow {
   position: relative;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -52,6 +59,7 @@ body {
   border-color: #A9927D;
 }
 
+/* Animación sutil de entrada */
 @keyframes fadeInSlide {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -61,6 +69,7 @@ body {
   animation: fadeInSlide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Botones con brillo dinámico */
 .btn-bordeaux {
   background: linear-gradient(135deg, #49111C 0%, #2D0A11 100%);
   transition: all 0.3s ease;
