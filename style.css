@@ -1,0 +1,72 @@
+* {
+  font-family: 'Inter', sans-serif !important;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #0A0908;
+  color: #F2F4F3;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.seccion {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.seccion.activa {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-glow {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(169, 146, 125, 0.2);
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+.card-glow:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px -15px rgba(73, 17, 28, 0.4), 0 0 20px -5px rgba(169, 146, 125, 0.2);
+  border-color: #A9927D;
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInSlide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn-bordeaux {
+  background: linear-gradient(135deg, #49111C 0%, #2D0A11 100%);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(169, 146, 125, 0.3);
+}
+.btn-bordeaux:hover {
+  background: linear-gradient(135deg, #5C1624 0%, #3B0D17 100%);
+  box-shadow: 0 0 20px rgba(73, 17, 28, 0.6);
+  transform: translateY(-2px);
+}
