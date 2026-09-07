@@ -30,8 +30,8 @@
 
   <nav class="border-b border-brown/40 bg-black/95 backdrop-blur-md sticky top-0 z-50 w-full">
     <div class="w-full px-8 md:px-16 h-20 flex justify-between items-center">
-      <span class="text-2xl font-extrabold tracking-tight cursor-pointer text-whiteSmoke flex items-center gap-1.5" onclick="cambiarSeccion('inicio')">
-        Rudbeck<span class="text-bordeaux">.</span>dev
+      <span class="text-xl md:text-2xl font-extrabold tracking-tight cursor-pointer text-whiteSmoke flex items-center gap-1.5" onclick="cambiarSeccion('inicio')">
+        Rudbeck Arriagada<span class="text-bordeaux">.</span>
       </span>
       
       <div class="flex gap-8 md:gap-12 text-sm font-semibold tracking-wide">
@@ -262,7 +262,6 @@
           "Render N°3 DIORAMA.png",
           "Render N°4 DIORAMA.png"
         ],
-        // Reemplaza 'video-diorama.mp4' por el nombre exacto de tu archivo de video en GitHub
         video360: "video-diorama.mp4" 
       },
       unity: {
@@ -289,14 +288,12 @@
 
       const contenedor = document.getElementById('detalle-contenido');
       
-      // Construimos el HTML de la galería de imágenes .png
       let galeriaHTML = proj.imagenes.map(img => `
         <div class="rounded-xl overflow-hidden border border-brown/40 shadow-md bg-black/40 h-64 md:h-80">
           <img src="${img}" alt="Render del diorama" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
         </div>
       `).join('');
 
-      // Si el proyecto tiene video 360, lo agregamos con un reproductor profesional
       let videoHTML = "";
       if (proj.video360) {
         videoHTML = `
