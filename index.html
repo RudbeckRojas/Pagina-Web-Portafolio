@@ -79,7 +79,7 @@
             </div>
           </div>
 
-          <!-- Portada Dinámica con Degradado Ajustado -->
+          <!-- Portada Dinámica con Degradado Corregido (Desplazado a la izquierda) -->
           <div class="lg:col-span-5 relative min-h-[450px] lg:min-h-full w-full overflow-hidden bg-black">
             <div id="carrusel-portada" class="absolute inset-0 w-full h-full">
               <!-- Las imágenes se inyectan dinámicamente vía JS -->
@@ -87,8 +87,8 @@
             
             <div class="absolute inset-0 mix-blend-color opacity-25 z-10 bg-bordeaux pointer-events-none"></div>
             
-            <!-- Degradado desplazado a la izquierda para despejar el render -->
-            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to right, #0A0908 0%, #0A0908 15%, #0A0908AA 40%, transparent 75%)"></div>
+            <!-- Degradado ajustado: el fundido oscuro se queda atrás (hacia la izquierda) y el render queda limpio -->
+            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to right, #0A0908 0%, #0A0908 35%, transparent 60%)"></div>
             
             <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to top, #0A0908 0%, transparent 15%, transparent 85%, #0A0908 100%)"></div>
           </div>
