@@ -79,18 +79,17 @@
             </div>
           </div>
 
-          <!-- Portada Dinámica con Renders Visibles sin Bloque Negro -->
+          <!-- Portada Dinámica con Fade Suave y Gradual -->
           <div class="lg:col-span-5 relative min-h-[450px] lg:min-h-full w-full overflow-hidden bg-black">
             <div id="carrusel-portada" class="absolute inset-0 w-full h-full">
               <!-- Las imágenes se inyectan dinámicamente vía JS -->
             </div>
             
-            <div class="absolute inset-0 mix-blend-color opacity-10 z-10 bg-bordeaux pointer-events-none"></div>
+            <!-- Degradado lateral suave (máscara de desvanecimiento gradual que no tapa el render) -->
+            <div class="absolute inset-0 z-25 pointer-events-none" style="background: linear-gradient(to right, #0A0908 0%, rgba(10,9,8,0.7) 15%, rgba(10,9,8,0.2) 35%, transparent 60%);"></div>
             
-            <!-- Transición mínima solo en el borde izquierdo para separar del texto -->
-            <div class="absolute inset-y-0 left-0 w-24 z-20 pointer-events-none" style="background: linear-gradient(to right, #0A0908, transparent)"></div>
-            
-            <div class="absolute inset-0 z-20 pointer-events-none" style="background: linear-gradient(to top, #0A0908 0%, transparent 15%, transparent 85%, #0A0908 100%)"></div>
+            <!-- Degradado superior e inferior muy sutiles -->
+            <div class="absolute inset-0 z-25 pointer-events-none" style="background: linear-gradient(to top, #0A0908 0%, transparent 15%, transparent 85%, #0A0908 100%);"></div>
           </div>
         </div>
       </section>
@@ -281,7 +280,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Carrusel Automático de Renders en la Portada
+    // Carrusel Automático de Renders en la Portada con Fade Suave entre imágenes
     const imagenesPortada = [
       "Render N°1 DIORAMA.png",
       "Render N°2 DIORAMA.png",
@@ -295,21 +294,22 @@
       const contenedor = document.getElementById('carrusel-portada');
       if (!contenedor) return;
 
+      // Las imágenes se muestran con visibilidad clara (opacity-85) y transición suave de fundido
       contenedor.innerHTML = imagenesPortada.map((img, i) => `
-        <img src="${img}" class="absolute inset-0 w-full h-full object-cover object-[center_25%] transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-90' : 'opacity-0'}" data-portada-img="${i}">
+        <img src="${img}" class="absolute inset-0 w-full h-full object-cover object-[center_25%] transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-85' : 'opacity-0'}" data-portada-img="${i}">
       `).join('');
 
       setInterval(() => {
         const imgs = contenedor.querySelectorAll('img');
         if (imgs.length === 0) return;
 
-        imgs[indicePortada].classList.remove('opacity-90');
+        imgs[indicePortada].classList.remove('opacity-85');
         imgs[indicePortada].classList.add('opacity-0');
 
         indicePortada = (indicePortada + 1) % imgs.length;
 
         imgs[indicePortada].classList.remove('opacity-0');
-        imgs[indicePortada].classList.add('opacity-90');
+        imgs[indicePortada].classList.add('opacity-85');
       }, 4500);
     }
 
