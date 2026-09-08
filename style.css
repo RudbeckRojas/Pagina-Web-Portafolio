@@ -25,19 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Sistema de transiciones de secciones */
-.seccion {
-  display: none;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-}
-.seccion.activa {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Efectos de brillo y profundidad en tarjetas (Hover con destello rojo) */
 .card-glow {
   position: relative;
