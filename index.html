@@ -576,4 +576,582 @@
     }
   </script>
 </body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rudbeck - Portafolio | Estudiante de Ing. Realidad Virtual y Juegos</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: '#0A0908',
+            bordeaux: '#49111C',
+            whiteSmoke: '#F2F4F3',
+            taupe: '#A9927D',
+            brown: '#5E503F'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
+
+  <!-- NAVEGACIÓN SUPERIOR FIJA -->
+  <nav class="border-b border-bordeaux/40 bg-black/90 backdrop-blur-md sticky top-0 z-50 w-full shadow-[0_4px_25px_rgba(73,17,28,0.2)]">
+    <div class="w-full px-6 md:px-16 h-20 flex flex-col md:flex-row justify-center md:justify-between items-center gap-2 md:gap-0">
+      <span class="text-xs md:text-sm font-bold tracking-widest cursor-pointer text-taupe uppercase hover:text-bordeaux transition-colors text-center" onclick="scrollToSection('inicio')">
+        RUDBECK • DISEÑO 3D & DESARROLLO
+      </span>
+      
+      <div class="flex gap-4 md:gap-8 text-sm font-semibold tracking-wide">
+        <button onclick="scrollToSection('inicio')" class="text-whiteSmoke hover:text-bordeaux transition-colors">Inicio</button>
+        <button onclick="scrollToSection('portafolio')" class="text-whiteSmoke hover:text-bordeaux transition-colors">Proyectos</button>
+        <button onclick="scrollToSection('sobre-mi')" class="text-whiteSmoke hover:text-bordeaux transition-colors">Sobre Mí</button>
+        <button onclick="scrollToSection('habilidades')" class="text-whiteSmoke hover:text-bordeaux transition-colors">Habilidades</button>
+        <button onclick="scrollToSection('contacto')" class="text-whiteSmoke hover:text-bordeaux transition-colors">Contacto</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="flex-grow w-full relative">
+
+    <div id="main-content" class="w-full">
+      
+      <!-- SECCIÓN: INICIO -->
+      <section id="inicio" class="w-full bg-black scroll-mt-20">
+        <div class="reveal min-h-[calc(100vh-80px)] w-full grid grid-cols-1 lg:grid-cols-12 overflow-hidden relative">
+          
+          <div class="lg:col-span-7 flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 z-30">
+            <div class="flex flex-wrap gap-3 mb-6">
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider bg-bordeaux text-whiteSmoke border border-bordeaux/80 shadow-lg">ESTUDIANTE UNIVERSITARIO</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider bg-black text-taupe border border-bordeaux/60 shadow-md">DESARROLLO 3D & C#</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6 text-whiteSmoke tracking-tight" style="font-family: 'Titania', sans-serif !important;">
+              Diseño <span class="text-bordeaux" style="font-family: 'Titania', sans-serif !important;">mundos</span>,<br />
+              programo <span class="text-taupe" style="font-family: 'Titania', sans-serif !important;">experiencias</span>,<br />
+              creo <span class="text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">futuro</span>.
+            </h1>
+            
+            <p class="text-base md:text-lg opacity-85 mb-8 text-whiteSmoke leading-relaxed font-light max-w-2xl">
+              Soy estudiante de Ingeniería en Realidad Virtual y Diseño de Juegos Digitales en la Universidad Bernardo O'Higgins. A través de mi formación he desarrollado una fuerte pasión por la creación de entornos, el modelado 3D y la lógica de programación. <strong class="text-taupe font-medium">Busco mi primera oportunidad profesional para aportar, aprender y crecer en la industria.</strong>
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+              <button onclick="scrollToSection('portafolio')" class="px-8 py-4 rounded-xl font-bold btn-bordeaux text-whiteSmoke tracking-wide flex items-center gap-3 shadow-lg">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Ver Proyectos
+              </button>
+              <button onclick="scrollToSection('contacto')" class="px-8 py-4 rounded-xl font-bold bg-transparent border border-bordeaux/70 text-whiteSmoke hover:bg-bordeaux/20 transition-all tracking-wide">
+                Contactar Ahora
+              </button>
+            </div>
+          </div>
+
+          <!-- Portada Dinámica con Fade Suave -->
+          <div class="lg:col-span-5 relative min-h-[450px] lg:min-h-full w-full overflow-hidden bg-black">
+            <div id="carrusel-portada" class="absolute inset-0 w-full h-full">
+              <!-- JS Inyección -->
+            </div>
+            
+            <div class="absolute inset-0 z-25 pointer-events-none" style="background: linear-gradient(to right, #0A0908 0%, rgba(10,9,8,0.7) 15%, rgba(10,9,8,0.2) 35%, transparent 60%);"></div>
+            <div class="absolute inset-0 z-25 pointer-events-none" style="background: linear-gradient(to top, #0A0908 0%, transparent 15%, transparent 85%, #0A0908 100%);"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-unique"></div>
+
+      <!-- SECCIÓN: PORTAFOLIO -->
+      <section id="portafolio" class="w-full bg-[#0c0a0a] px-8 md:px-16 py-24 scroll-mt-20">
+        <div class="reveal">
+          <div class="mb-12 border-b border-bordeaux/40 pb-6 w-full flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <h2 class="text-bordeaux font-bold tracking-widest text-sm uppercase mb-2">PRÁCTICA Y APLICACIÓN</h2>
+              <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight" style="font-family: 'Titania', sans-serif !important;">Proyectos Destacados</h1>
+            </div>
+            <p class="text-sm opacity-75 font-light">Explora una selección de mis trabajos académicos y prototipos personales donde aplico mis habilidades técnicas.</p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            <div onclick="abrirProyecto('blender')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
+              <div class="h-60 bg-gray-900 relative overflow-hidden">
+                <img src="Render N°1 DIORAMA.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
+                <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
+                  <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg> BLENDER 3D
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Diorama Habitación Retro Años 90</h3>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Proyecto universitario enfocado en la recreación estética vintage mediante modelado, texturizado e iluminación ambiental.</p>
+                <span class="text-xs font-bold text-taupe underline">Ver galería y detalles →</span>
+              </div>
+            </div>
+
+            <div onclick="abrirProyecto('unity')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
+              <div class="h-60 bg-gray-900 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
+                <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
+                  <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg> UNITY ENGINE
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Prototipo Videojuego VR / 3D</h3>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Práctica de programación de mecánicas de interacción en C#, enfocada en resolución de puzzles y físicas.</p>
+                <span class="text-xs font-bold text-taupe underline">Ver detalles y código →</span>
+              </div>
+            </div>
+
+            <div onclick="abrirProyecto('arduino')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
+              <div class="h-60 bg-gray-900 relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
+                <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
+                  <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 7h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10z"/></svg> ARDUINO HARDWARE
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Sistema Electrónico Interactivo</h3>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Desarrollo académico que integra sensores y actuadores con microcontroladores programados en C++.</p>
+                <span class="text-xs font-bold text-taupe underline">Ver documentación →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-unique"></div>
+
+      <!-- SECCIÓN: SOBRE MÍ -->
+      <section id="sobre-mi" class="w-full bg-black px-8 md:px-16 py-24 scroll-mt-20">
+        <div class="reveal">
+          <div class="mb-12 border-b border-bordeaux/40 pb-6 w-full">
+            <h2 class="text-bordeaux font-bold tracking-widest text-sm uppercase mb-2">PERFIL Y MOTIVACIONES</h2>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight" style="font-family: 'Titania', sans-serif !important;">Sobre Mí</h1>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-lg opacity-85 leading-relaxed font-light">
+              <p>
+                ¡Hola! Soy <strong class="text-taupe font-semibold">Rudbeck</strong>. Me considero un estudiante sumamente curioso, con gran capacidad analítica y una actitud dispuesta a absorber nuevos conocimientos. Me atrae el misticismo de los mundos mitológicos y disfruto entrenar mi mente resolviendo desafíos lógicos, como armar cubos de Rubik a velocidad.
+              </p>
+              <p>
+                Actualmente, como estudiante de <strong class="text-taupe font-semibold">Ingeniería en Realidad Virtual y Diseño de Juegos Digitales</strong>, estoy construyendo una sólida base técnica. Mi formación me ha permitido entender y fusionar la parte artística del diseño y modelado 3D con el razonamiento estructurado que exige la programación de software.
+              </p>
+              <p>
+                Hoy mi objetivo es dar el salto al ecosistema laboral. Busco <strong class="text-taupe font-semibold">mi primera experiencia laboral, pasantía o práctica profesional</strong> en estudios de videojuegos, desarrollo interactivo o tecnología, donde pueda colaborar con equipos experimentados, aportar energía y demostrar todo lo que he aprendido.
+              </p>
+              <div class="pt-4 flex gap-4">
+                <button onclick="scrollToSection('contacto')" class="px-6 py-3 rounded-xl font-bold btn-bordeaux text-whiteSmoke shadow-md">
+                  Conversemos sobre oportunidades
+                </button>
+              </div>
+            </div>
+
+            <!-- FOTO DE PERFIL -->
+            <div class="relative w-full max-w-md mx-auto aspect-square rounded-3xl overflow-hidden shadow-[0_15px_40px_rgba(73,17,28,0.3)] border border-bordeaux/50">
+              <img src="foto-perfil.jpeg" alt="Rudbeck" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-700 hover:scale-105 cursor-pointer">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-unique"></div>
+
+      <!-- SECCIÓN: HABILIDADES -->
+      <section id="habilidades" class="w-full bg-[#0c0a0a] px-8 md:px-16 py-24 scroll-mt-20">
+        <div class="reveal">
+          <div class="mb-12 border-b border-bordeaux/40 pb-6 w-full text-center">
+            <h2 class="text-bordeaux font-bold tracking-widest text-sm uppercase mb-2">CONOCIMIENTOS TÉCNICOS</h2>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight" style="font-family: 'Titania', sans-serif !important;">Habilidades</h1>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-[#151311] border border-bordeaux/50 p-10 rounded-3xl card-glow flex flex-col items-center text-center shadow-lg">
+              <svg class="w-14 h-14 fill-current text-taupe mb-6" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg>
+              <h3 class="text-2xl font-bold mb-4 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">modelado 3D</h3>
+              <p class="text-base opacity-75 font-light leading-relaxed">Prácticas académicas en Blender, texturizado básico, UV Mapping y optimización inicial de modelos tridimensionales.</p>
+            </div>
+
+            <div class="bg-[#151311] border border-bordeaux/50 p-10 rounded-3xl card-glow flex flex-col items-center text-center shadow-lg">
+              <svg class="w-14 h-14 fill-current text-taupe mb-6" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+              <h3 class="text-2xl font-bold mb-4 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Unity</h3>
+              <p class="text-base opacity-75 font-light leading-relaxed">Primeros pasos con Unity Engine y programación en C# para desarrollar lógicas sencillas y prototipos interactivos.</p>
+            </div>
+
+            <div class="bg-[#151311] border border-bordeaux/50 p-10 rounded-3xl card-glow flex flex-col items-center text-center shadow-lg">
+              <svg class="w-14 h-14 fill-current text-taupe mb-6" viewBox="0 0 24 24"><path d="M9 2h6v2h-6V2zm11 5v10h-2V7h2zm-4-3H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H8V6h8v12zM4 7h2v10H4V7z"/></svg>
+              <h3 class="text-2xl font-bold mb-4 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Hardware / Hapticas</h3>
+              <p class="text-base opacity-75 font-light leading-relaxed">Experiencia en ramos universitarios usando Arduino y C++ para conectar el mundo físico con sistemas lógicos e interactivos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-unique"></div>
+
+      <!-- SECCIÓN: CONTACTO (CENTRADA) -->
+      <section id="contacto" class="w-full bg-[#0c0a0a] px-8 md:px-16 py-24 pb-32 scroll-mt-20">
+        <div class="reveal max-w-3xl mx-auto flex flex-col items-center text-center">
+          <div class="mb-12 border-b border-bordeaux/40 pb-6 w-full flex flex-col items-center">
+            <h2 class="text-bordeaux font-bold tracking-widest text-sm uppercase mb-2">PRIMEROS PASOS PROFESIONALES</h2>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight" style="font-family: 'Titania', sans-serif !important;">Contacto</h1>
+            <p class="text-lg opacity-75 font-light mt-2">¿Buscas talento emergente y motivado para tu equipo de desarrollo o diseño 3D? Conversemos.</p>
+          </div>
+          
+          <div class="bg-[#151311] border border-bordeaux/60 p-8 md:p-12 rounded-3xl w-full shadow-xl card-glow flex flex-col items-center">
+            <div class="space-y-6 mb-10 w-full flex flex-col items-center">
+              <p class="text-lg flex items-center justify-center gap-4 break-words">
+                <svg class="w-6 h-6 fill-current text-bordeaux flex-shrink-0" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span class="opacity-90">rudbeck@estudiante.ubo.cl</span>
+              </p>
+              <p class="text-lg flex items-center justify-center gap-4 break-words">
+                <svg class="w-6 h-6 fill-current text-bordeaux flex-shrink-0" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 15H4V8h16v11z"/></svg>
+                <span class="opacity-90 text-center">Estudiante de Ing. en Realidad Virtual y Diseño de Juegos Digitales</span>
+              </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 w-full">
+              <a href="#" class="px-6 py-4 bg-black border border-bordeaux/60 rounded-xl hover:bg-bordeaux/30 transition-all text-whiteSmoke flex items-center gap-2 shadow-md">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="#" class="px-6 py-4 bg-black border border-bordeaux/60 rounded-xl hover:bg-bordeaux/30 transition-all text-whiteSmoke flex items-center gap-2 shadow-md">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECCIÓN: DETALLE DE PROYECTO (DISEÑO MÁS ESTÉTICO Y LIMPIO) -->
+    <div id="detalle-proyecto" class="w-full px-6 md:px-16 py-16 hidden animate-fade-in scroll-mt-20">
+      <button onclick="cerrarProyecto()" class="mb-8 px-6 py-3 rounded-xl bg-bordeaux text-whiteSmoke hover:bg-bordeaux/80 transition-all flex items-center gap-2 text-sm font-bold shadow-lg cursor-pointer border border-taupe/30">
+        ← Volver a Proyectos
+      </button>
+
+      <div class="bg-[#0D0B0A] border border-bordeaux/40 p-6 md:p-14 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] w-full relative">
+        <div id="detalle-contenido">
+          <!-- Inyección dinámica -->
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL LIGHTBOX -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4 md:p-12 animate-fade-in">
+      <button onclick="cerrarLightbox()" class="absolute top-6 right-6 text-whiteSmoke bg-bordeaux hover:bg-bordeaux/80 px-4 py-2 rounded-xl text-sm font-bold border border-taupe/30 z-50 cursor-pointer">
+        ✕ Cerrar Vista
+      </button>
+      <div id="lightbox-contenido" class="max-w-5xl max-h-[85vh] w-full flex items-center justify-center">
+        <!-- Contenido dinámico del lightbox -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-bordeaux/40 py-8 text-center text-sm opacity-60 bg-black tracking-wide w-full">
+    <p>© <span id="year"></span> Rudbeck. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Carrusel Automático de Renders en la Portada con Fade Suave entre imágenes
+    const imagenesPortada = [
+      "Render N°1 DIORAMA.png",
+      "Render N°2 DIORAMA.png",
+      "Render N°3 DIORAMA.png",
+      "Render N°4 DIORAMA.png"
+    ];
+    
+    let indicePortada = 0;
+
+    function iniciarCarruselPortada() {
+      const contenedor = document.getElementById('carrusel-portada');
+      if (!contenedor) return;
+
+      contenedor.innerHTML = imagenesPortada.map((img, i) => `
+        <img src="${img}" class="absolute inset-0 w-full h-full object-cover object-[center_25%] transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-85' : 'opacity-0'}" data-portada-img="${i}">
+      `).join('');
+
+      setInterval(() => {
+        const imgs = contenedor.querySelectorAll('img');
+        if (imgs.length === 0) return;
+
+        imgs[indicePortada].classList.remove('opacity-85');
+        imgs[indicePortada].classList.add('opacity-0');
+
+        indicePortada = (indicePortada + 1) % imgs.length;
+
+        imgs[indicePortada].classList.remove('opacity-0');
+        imgs[indicePortada].classList.add('opacity-85');
+      }, 4500);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      iniciarCarruselPortada();
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach((el) => {
+        observer.observe(el);
+      });
+    });
+
+    function scrollToSection(id) {
+      document.getElementById('detalle-proyecto').classList.add('hidden');
+      document.getElementById('main-content').classList.remove('hidden');
+      
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    const proyectosData = {
+      blender: {
+        titulo: "Diorama Habitación Retro Años 90 (Blender)",
+        categoria: "MODELADO 3D ACADÉMICO",
+        descripcion: "Proyecto académico centrado en la creación de un diorama inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica y poner en práctica los fundamentos de modelado de mobiliario y texturizado.",
+        detalles: "Aplicación de modelado poligonal en Blender, experimentando con técnicas de iluminación y composición de escena.",
+        tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Texturizado Básico"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Vista General del Diorama" },
+          { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Detalle de Consola e Iluminación" },
+          { tipo: "imagen", src: "Render N°3 DIORAMA.png", titulo: "Área de Trabajo y Computador" },
+          { tipo: "imagen", src: "Render N°4 DIORAMA.png", titulo: "Mobiliario y Cubo de Rubik" },
+          { tipo: "video", src: "video-diorama.mp4", titulo: "Recorrido en Video 360°" }
+        ]
+      },
+      unity: {
+        titulo: "Prototipo de Realidad Virtual / Juegos 3D (Unity)",
+        categoria: "DESARROLLO INTERACTIVO ESTUDIANTIL",
+        descripcion: "Prototipo universitario desarrollado en Unity con mecánicas orientadas a la resolución de puzzles y comprensión del espacio virtual.",
+        detalles: "Práctica de programación en C# implementando lógicas interactivas sencillas, gestión de eventos y optimización básica.",
+        tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Lógica de Puzzles"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista General del Entorno en Unity" }
+        ]
+      },
+      arduino: {
+        titulo: "Sistema Electrónico Interactivo (Arduino)",
+        categoria: "HARDWARE Y PROTOTIPADO BÁSICO",
+        descripcion: "Proyecto académico que explora la integración de microcontroladores para conectar entradas del entorno real con un sistema digital.",
+        detalles: "Desarrollo de un circuito lógico y programación en C++ para coordinar sensores analógicos y digitales.",
+        tecnologias: ["Arduino IDE", "C++", "Sensores Básicos", "Prototipado Académico"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", titulo: "Esquema y Montaje Físico" }
+        ]
+      }
+    };
+
+    // Variables de estado del visor interactivo
+    let proyectoActualActivo = null;
+    let indiceGaleriaActual = 0;
+
+    function abrirProyecto(id) {
+      const proj = proyectosData[id];
+      if (!proj) return;
+      
+      proyectoActualActivo = proj;
+      indiceGaleriaActual = 0;
+      
+      const contenedor = document.getElementById('detalle-contenido');
+
+      contenedor.innerHTML = `
+        <div class="mb-8">
+          <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider bg-bordeaux text-whiteSmoke border border-bordeaux/85 shadow-md inline-block mb-4">${proj.categoria}</span>
+          <h1 class="text-3xl md:text-5xl font-extrabold text-whiteSmoke mb-4 tracking-tight">${proj.titulo}</h1>
+          <p class="text-lg opacity-85 leading-relaxed font-light max-w-3xl">${proj.detalles}</p>
+        </div>
+
+        <!-- VISOR MULTIMEDIA ELEGANTE (ESTILO APPLE / PORTAFOLIO PRO) -->
+        <div class="mb-12">
+          
+          <!-- Escenario Principal Sin Recuadros Toscos -->
+          <div class="relative bg-gradient-to-b from-[#070605] to-[#030201] border border-bordeaux/30 rounded-3xl p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col items-center justify-center min-h-[460px]">
+            
+            <!-- Flecha Izquierda Minimalista de Cristal -->
+            <button onclick="cambiarGaleria(-1)" class="absolute left-4 md:left-6 z-20 w-12 h-12 rounded-2xl bg-black/60 backdrop-blur-md border border-bordeaux/50 text-whiteSmoke hover:bg-bordeaux hover:border-bordeaux transition-all duration-300 flex items-center justify-center shadow-2xl font-bold text-lg cursor-pointer group">
+              <span class="group-hover:-translate-x-0.5 transition-transform">←</span>
+            </button>
+            
+            <!-- Contenedor Dinámico del Contenido -->
+            <div id="galeria-visor-container" class="w-full relative flex items-center justify-center min-h-[380px] px-6 md:px-12">
+              <!-- Inyección JS -->
+            </div>
+
+            <!-- Flecha Derecha Minimalista de Cristal -->
+            <button onclick="cambiarGaleria(1)" class="absolute right-4 md:right-6 z-20 w-12 h-12 rounded-2xl bg-black/60 backdrop-blur-md border border-bordeaux/50 text-whiteSmoke hover:bg-bordeaux hover:border-bordeaux transition-all duration-300 flex items-center justify-center shadow-2xl font-bold text-lg cursor-pointer group">
+              <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+            </button>
+
+            <!-- Barra de Información y Título Inferior Integrada -->
+            <div class="mt-6 flex flex-col md:flex-row items-center justify-between w-full border-t border-bordeaux/20 pt-4 gap-2">
+              <span id="galeria-item-titulo" class="text-sm font-semibold text-whiteSmoke tracking-wide text-center md:text-left">Cargando...</span>
+              <span id="galeria-contador" class="text-xs font-bold text-taupe uppercase tracking-widest bg-black/80 px-3.5 py-1 rounded-full border border-bordeaux/30">1 / 1</span>
+            </div>
+          </div>
+
+          <!-- Tira de Miniaturas Inferior (Filmstrip Estética) -->
+          <div id="galeria-miniaturas" class="flex gap-3 mt-4 overflow-x-auto pb-2 justify-center">
+            <!-- Inyección JS de miniaturas -->
+          </div>
+        </div>
+
+        <!-- Secciones Inferiores Estilizadas -->
+        <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-bordeaux/30">
+          <div class="bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Objetivo del Proyecto
+            </h3>
+            <p class="text-base opacity-80 leading-relaxed font-light">${proj.descripcion}</p>
+          </div>
+          <div class="bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Herramientas Utilizadas
+            </h3>
+            <div class="flex flex-wrap gap-2.5 pt-2">
+              ${proj.tecnologias.map(t => `<span class="px-4 py-2 rounded-xl bg-black text-whiteSmoke border border-bordeaux/60 text-xs font-semibold shadow-md">${t}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      
+      actualizarVistaGaleriaProyecto();
+
+      document.getElementById('main-content').classList.add('hidden');
+      const detalleContenedor = document.getElementById('detalle-proyecto');
+      detalleContenedor.classList.remove('hidden');
+      detalleContenedor.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function cambiarGaleria(direccion) {
+      if (!proyectoActualActivo) return;
+      const total = proyectoActualActivo.elementosGaleria.length;
+      indiceGaleriaActual = (indiceGaleriaActual + direccion + total) % total;
+      actualizarVistaGaleriaProyecto();
+    }
+
+    function seleccionarIndiceGaleria(index) {
+      if (!proyectoActualActivo) return;
+      indiceGaleriaActual = index;
+      actualizarVistaGaleriaProyecto();
+    }
+
+    function actualizarVistaGaleriaProyecto() {
+      if (!proyectoActualActivo) return;
+      const elementos = proyectoActualActivo.elementosGaleria;
+      const actual = elementos[indiceGaleriaActual];
+      
+      const contenedorMedia = document.getElementById('galeria-visor-container');
+      const contadorTexto = document.getElementById('galeria-contador');
+      const tituloTexto = document.getElementById('galeria-item-titulo');
+      const contenedorMiniaturas = document.getElementById('galeria-miniaturas');
+      
+      if (!contenedorMedia) return;
+
+      contadorTexto.textContent = `${indiceGaleriaActual + 1} / ${elementos.length}`;
+      tituloTexto.textContent = actual.titulo;
+
+      // Renderizar vista principal con estética limpia
+      if (actual.tipo === 'imagen') {
+        contenedorMedia.innerHTML = `
+          <div onclick="abrirLightbox('imagen', '${actual.src}', '${actual.titulo}')" class="relative group cursor-pointer overflow-hidden rounded-2xl border border-bordeaux/30 bg-black/40 flex items-center justify-center max-h-[52vh] w-full shadow-2xl">
+            <img src="${actual.src}" class="max-h-[52vh] w-auto object-contain transition-transform duration-700 group-hover:scale-102">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+              <span class="bg-bordeaux text-whiteSmoke px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider shadow-xl border border-taupe/40">🔍 Ampliar Imagen</span>
+            </div>
+          </div>
+        `;
+      } else {
+        // Reproductor de video limpio y armónico con la temática
+        contenedorMedia.innerHTML = `
+          <div class="w-full flex items-center justify-center max-h-[52vh] rounded-2xl overflow-hidden border border-bordeaux/40 shadow-2xl bg-black relative">
+            <video src="${actual.src}" controls class="max-h-[52vh] w-auto object-contain outline-none">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        `;
+      }
+
+      // Renderizar miniaturas inferiores sincronizadas
+      if (contenedorMiniaturas) {
+        contenedorMiniaturas.innerHTML = elementos.map((el, i) => {
+          const esActivo = i === indiceGaleriaActual;
+          const estiloBorde = esActivo ? 'border-bordeaux ring-2 ring-bordeaux scale-105 opacity-100 shadow-[0_0_15px_rgba(73,17,28,0.6)]' : 'border-bordeaux/30 opacity-40 hover:opacity-80';
+          
+          if (el.tipo === 'imagen') {
+            return `
+              <div onclick="seleccionarIndiceGaleria(${i})" class="w-20 h-14 rounded-xl overflow-hidden border-2 ${estiloBorde} cursor-pointer transition-all bg-black flex-shrink-0 shadow-md">
+                <img src="${el.src}" class="w-full h-full object-cover">
+              </div>
+            `;
+          } else {
+            return `
+              <div onclick="seleccionarIndiceGaleria(${i})" class="w-20 h-14 rounded-xl overflow-hidden border-2 ${estiloBorde} cursor-pointer transition-all bg-black flex-shrink-0 flex items-center justify-center text-xs font-bold text-whiteSmoke shadow-md relative">
+                <video src="${el.src}" class="w-full h-full object-cover opacity-40"></video>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/50 text-xs">▶</div>
+              </div>
+            `;
+          }
+        }).join('');
+      }
+    }
+
+    function cerrarProyecto() {
+      document.getElementById('detalle-proyecto').classList.add('hidden');
+      document.getElementById('main-content').classList.remove('hidden');
+      document.getElementById('portafolio').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function abrirLightbox(tipo, src, titulo) {
+      const modal = document.getElementById('lightbox-modal');
+      const contenido = document.getElementById('lightbox-contenido');
+      
+      if (tipo === 'imagen') {
+        contenido.innerHTML = `
+          <div class="flex flex-col items-center">
+            <img src="${src}" class="max-h-[82vh] max-w-full rounded-2xl object-contain border border-bordeaux/50 shadow-2xl mb-4">
+            <span class="text-sm font-semibold text-taupe uppercase tracking-wider">${titulo}</span>
+          </div>
+        `;
+      } else {
+        contenido.innerHTML = `
+          <div class="flex flex-col items-center w-full">
+            <video src="${src}" controls autoplay class="max-h-[82vh] max-w-full rounded-2xl object-contain border border-bordeaux/50 shadow-2xl mb-4">
+              Tu navegador no soporta video.
+            </video>
+            <span class="text-sm font-semibold text-taupe uppercase tracking-wider">${titulo}</span>
+          </div>
+        `;
+      }
+      
+      modal.classList.remove('hidden');
+    }
+
+    function cerrarLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+      document.getElementById('lightbox-contenido').innerHTML = '';
+    }
+  </script>
+</body>
 </html>
