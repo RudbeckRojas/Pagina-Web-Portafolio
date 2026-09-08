@@ -106,7 +106,7 @@
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-            <div onclick="abrirProyecto('blender')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow">
+            <div onclick="abrirProyecto('blender')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
               <div class="h-60 bg-gray-900 relative overflow-hidden">
                 <img src="Render N°1 DIORAMA.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
                 <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
@@ -120,7 +120,7 @@
               </div>
             </div>
 
-            <div onclick="abrirProyecto('unity')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow">
+            <div onclick="abrirProyecto('unity')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
               <div class="h-60 bg-gray-900 relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
                 <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
@@ -134,7 +134,7 @@
               </div>
             </div>
 
-            <div onclick="abrirProyecto('arduino')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow">
+            <div onclick="abrirProyecto('arduino')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
               <div class="h-60 bg-gray-900 relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
                 <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
@@ -257,9 +257,9 @@
       </section>
     </div>
 
-    <!-- SECCIÓN: DETALLE DE PROYECTO (REESTRUCTURADA Y OPTIMIZADA) -->
+    <!-- SECCIÓN: DETALLE DE PROYECTO (CON VISOR DE CARRUSEL DE UNA IMAGEN) -->
     <div id="detalle-proyecto" class="w-full px-8 md:px-16 py-16 hidden animate-fade-in scroll-mt-20">
-      <button onclick="cerrarProyecto()" class="mb-8 px-5 py-2.5 rounded-lg bg-bordeaux text-whiteSmoke hover:bg-bordeaux/80 transition-colors flex items-center gap-2 text-sm font-semibold shadow-md">
+      <button onclick="cerrarProyecto()" class="mb-8 px-5 py-2.5 rounded-lg bg-bordeaux text-whiteSmoke hover:bg-bordeaux/80 transition-colors flex items-center gap-2 text-sm font-semibold shadow-md cursor-pointer">
         ← Volver a Proyectos
       </button>
 
@@ -272,7 +272,7 @@
 
     <!-- MODAL LIGHTBOX -->
     <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4 md:p-12 animate-fade-in">
-      <button onclick="cerrarLightbox()" class="absolute top-6 right-6 text-whiteSmoke bg-bordeaux hover:bg-bordeaux/80 px-4 py-2 rounded-xl text-sm font-bold border border-taupe/30 z-50">
+      <button onclick="cerrarLightbox()" class="absolute top-6 right-6 text-whiteSmoke bg-bordeaux hover:bg-bordeaux/80 px-4 py-2 rounded-xl text-sm font-bold border border-taupe/30 z-50 cursor-pointer">
         ✕ Cerrar Vista
       </button>
       <div id="lightbox-contenido" class="max-w-5xl max-h-[85vh] w-full flex items-center justify-center">
@@ -385,36 +385,19 @@
       }
     };
 
+    // Variables de estado para el visor de galería actual
+    let proyectoActualActivo = null;
+    let indiceGaleriaActual = 0;
+
     function abrirProyecto(id) {
       const proj = proyectosData[id];
       if (!proj) return;
       
-      const contenedor = document.getElementById('detalle-contenido');
+      proyectoActualActivo = proj;
+      indiceGaleriaActual = 0;
       
-      let galeriaHTML = proj.elementosGaleria.map((el, index) => {
-        if (el.tipo === 'imagen') {
-          return `
-            <div onclick="abrirLightbox('imagen', '${el.src}', '${el.titulo}')" class="group relative rounded-2xl overflow-hidden border border-bordeaux/40 bg-black aspect-video cursor-pointer shadow-xl card-glow flex items-center justify-center">
-              <img src="${el.src}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span class="text-xs font-bold text-taupe uppercase tracking-wider">${el.titulo} (Ampliar)</span>
-              </div>
-            </div>
-          `;
-        } else {
-          return `
-            <div onclick="abrirLightbox('video', '${el.src}', '${el.titulo}')" class="group relative rounded-2xl overflow-hidden border border-bordeaux/40 bg-black aspect-video cursor-pointer shadow-xl card-glow flex items-center justify-center">
-              <video src="${el.src}" class="w-full h-full object-cover opacity-70"></video>
-              <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-2 group-hover:bg-black/40 transition-all">
-                <div class="w-12 h-12 rounded-full bg-bordeaux text-white flex items-center justify-center shadow-lg">▶</div>
-                <span class="text-xs font-bold text-whiteSmoke uppercase tracking-wider">${el.titulo}</span>
-              </div>
-            </div>
-          `;
-        }
-      }).join('');
+      const contenedor = document.getElementById('detalle-contenido');
 
-      // Plantilla estructurada y limpia para el detalle del proyecto
       contenedor.innerHTML = `
         <div class="mb-8">
           <span class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider bg-bordeaux text-whiteSmoke border border-bordeaux/80 shadow-md inline-block mb-4">${proj.categoria}</span>
@@ -422,12 +405,36 @@
           <p class="text-lg opacity-85 leading-relaxed font-light max-w-3xl">${proj.detalles}</p>
         </div>
 
+        <!-- VISOR MULTIMEDIA TIPO CARRUSEL CON FLECHAS -->
         <div class="mb-12">
-          <h3 class="text-xl font-bold text-whiteSmoke mb-6 flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-bordeaux"></span> Galería del Proyecto (Haz clic para ampliar)
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            ${galeriaHTML}
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-bold text-whiteSmoke flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-bordeaux"></span> Visor Multimedia (Haz clic para ampliar imagen)
+            </h3>
+            <span id="galeria-contador" class="text-xs font-bold text-taupe uppercase tracking-wider bg-black/60 border border-bordeaux/40 px-3 py-1 rounded-full">1 / 1</span>
+          </div>
+
+          <div class="relative bg-[#0A0908] border border-bordeaux/60 rounded-3xl p-4 md:p-8 shadow-2xl flex flex-col items-center justify-center min-h-[420px]">
+            
+            <!-- Botón Flecha Izquierda -->
+            <button onclick="cambiarGaleria(-1)" class="absolute left-3 md:left-6 z-20 w-12 h-12 rounded-full bg-black/90 border border-bordeaux/70 text-whiteSmoke hover:bg-bordeaux hover:text-white transition-all flex items-center justify-center shadow-lg font-bold text-xl cursor-pointer">
+              ←
+            </button>
+            
+            <!-- Contenedor Dinámico del Elemento Actual -->
+            <div id="galeria-visor-container" class="w-full relative flex items-center justify-center min-h-[350px] px-8 md:px-12">
+              <!-- Se inyecta por JS -->
+            </div>
+
+            <!-- Botón Flecha Derecha -->
+            <button onclick="cambiarGaleria(1)" class="absolute right-3 md:right-6 z-20 w-12 h-12 rounded-full bg-black/90 border border-bordeaux/70 text-whiteSmoke hover:bg-bordeaux hover:text-white transition-all flex items-center justify-center shadow-lg font-bold text-xl cursor-pointer">
+              →
+            </button>
+
+            <!-- Título del Elemento Actual -->
+            <div class="mt-6 text-center">
+              <span id="galeria-item-titulo" class="text-sm font-semibold text-taupe uppercase tracking-wider">Cargando...</span>
+            </div>
           </div>
         </div>
 
@@ -449,10 +456,54 @@
         </div>
       `;
       
+      actualizarVistaGaleriaProyecto();
+
       document.getElementById('main-content').classList.add('hidden');
       const detalleContenedor = document.getElementById('detalle-proyecto');
       detalleContenedor.classList.remove('hidden');
       detalleContenedor.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function cambiarGaleria(direccion) {
+      if (!proyectoActualActivo) return;
+      const total = proyectoActualActivo.elementosGaleria.length;
+      indiceGaleriaActual = (indiceGaleriaActual + direccion + total) % total;
+      actualizarVistaGaleriaProyecto();
+    }
+
+    function actualizarVistaGaleriaProyecto() {
+      if (!proyectoActualActivo) return;
+      const elementos = proyectoActualActivo.elementosGaleria;
+      const actual = elementos[indiceGaleriaActual];
+      
+      const contenedorMedia = document.getElementById('galeria-visor-container');
+      const contadorTexto = document.getElementById('galeria-contador');
+      const tituloTexto = document.getElementById('galeria-item-titulo');
+      
+      if (!contenedorMedia) return;
+
+      contadorTexto.textContent = `${indiceGaleriaActual + 1} / ${elementos.length}`;
+      tituloTexto.textContent = actual.titulo;
+
+      if (actual.tipo === 'imagen') {
+        contenedorMedia.innerHTML = `
+          <div onclick="abrirLightbox('imagen', '${actual.src}', '${actual.titulo}')" class="relative group cursor-pointer overflow-hidden rounded-2xl border border-bordeaux/40 bg-black flex items-center justify-center max-h-[50vh] w-full shadow-lg">
+            <img src="${actual.src}" class="max-h-[50vh] w-auto object-contain transition-transform duration-500 group-hover:scale-102">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-bordeaux text-whiteSmoke px-4 py-2 rounded-xl text-xs font-bold tracking-wider shadow-md border border-taupe/30">Ampliar en Pantalla Completa</span>
+            </div>
+          </div>
+        `;
+      } else {
+        // Reproductor de video estilizado y adaptado a la temática bordeaux/negro
+        contenedorMedia.innerHTML = `
+          <div class="w-full flex items-center justify-center max-h-[50vh] rounded-2xl overflow-hidden border border-bordeaux/60 shadow-2xl bg-black">
+            <video src="${actual.src}" controls class="max-h-[50vh] w-auto object-contain">
+              Tu navegador no soporta video.
+            </video>
+          </div>
+        `;
+      }
     }
 
     function cerrarProyecto() {
