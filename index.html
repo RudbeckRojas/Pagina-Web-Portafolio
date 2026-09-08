@@ -80,10 +80,10 @@
             </div>
           </div>
 
-          <!-- Portada Dinámica con Fade Suave -->
+          <!-- Portada Dinámica con Fade Suave (Se alimenta sola de los proyectos) -->
           <div class="lg:col-span-5 relative min-h-[450px] lg:min-h-full w-full overflow-hidden bg-black">
             <div id="carrusel-portada" class="absolute inset-0 w-full h-full">
-              <!-- JS Inyección -->
+              <!-- JS Inyección Dinámica -->
             </div>
             
             <div class="absolute inset-0 z-25 pointer-events-none" style="background: linear-gradient(to right, #0A0908 0%, rgba(10,9,8,0.7) 15%, rgba(10,9,8,0.2) 35%, transparent 60%);"></div>
@@ -124,7 +124,7 @@
             <!-- Proyecto 2: Set de Living de Mimbre -->
             <div onclick="abrirProyecto('mimbre')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
               <div class="h-60 bg-gray-900 relative overflow-hidden">
-                <img src="mimbre-1.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
+                <img src="Render Mesas Mimbre N°1.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
                 <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
                   <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg> RENDER CYCLES
                 </div>
@@ -308,19 +308,70 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Carrusel Automático de Renders en la Portada con Fade Suave entre imágenes
-    const imagenesPortada = [
-      "Render N°1 DIORAMA.png",
-      "Render N°2 DIORAMA.png",
-      "Render N°3 DIORAMA.png",
-      "Render N°4 DIORAMA.png"
-    ];
-    
+    const proyectosData = {
+      blender: {
+        titulo: "Diorama Habitación Retro Años 90 (Blender)",
+        categoria: "MODELADO 3D ACADÉMICO",
+        descripcion: "Proyecto académico centrado en la creación de un diorama inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica y poner en práctica los fundamentos de modelado de mobiliario y texturizado.",
+        detalles: "Aplicación de modelado poligonal en Blender, experimentando con técnicas de iluminación y composición de escena.",
+        tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Texturizado Básico"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Vista General del Diorama" },
+          { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Detalle de Consola e Iluminación" },
+          { tipo: "imagen", src: "Render N°3 DIORAMA.png", titulo: "Área de Trabajo y Computador" },
+          { tipo: "imagen", src: "Render N°4 DIORAMA.png", titulo: "Mobiliario y Cubo de Rubik" },
+          { tipo: "video", src: "video-diorama.mp4", titulo: "Recorrido en Video 360°" }
+        ]
+      },
+      mimbre: {
+        titulo: "Set de Living de Mimbre (Blender / Cycles)",
+        categoria: "MODELADO 3D ACADÉMICO",
+        descripcion: "Proyecto académico centrado en el diseño y modelado de un conjunto de mobiliario de exterior, incluyendo sillones de mimbre con cojines acolchados, una mesa de centro con cubierta de cristal y un juego de tazas detallado. El enfoque principal estuvo en la aplicación de texturas PBR realistas y la iluminación y renderizado en Cycles.",
+        detalles: "Práctica avanzada de modelado poligonal, mapeo UV, creación de materiales PBR para texturas de mimbre y tela, y configuración de render en Cycles para reflejos naturales.",
+        tecnologias: ["Blender", "Modelado 3D", "Texturas PBR", "Render Cycles", "Mapeo UV"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "Render Mesas Mimbre N°1.png", titulo: "Vista General del Set de Living" },
+          { tipo: "imagen", src: "Render Mesas Mimbre N°2.png", titulo: "Perspectiva de Sillones y Distribución" },
+          { tipo: "imagen", src: "Render Mesas Mimbre N°3.png", titulo: "Detalle de Mesa de Centro, Vidrio y Tazas" }
+        ]
+      },
+      unity: {
+        titulo: "Prototipo de Realidad Virtual / Juegos 3D (Unity)",
+        categoria: "DESARROLLO INTERACTIVO ESTUDIANTIL",
+        descripcion: "Prototipo universitario desarrollado en Unity con mecánicas orientadas a la resolución de puzzles y comprensión del espacio virtual.",
+        detalles: "Práctica de programación en C# implementando lógicas interactivas sencillas, gestión de eventos y optimización básica.",
+        tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Lógica de Puzzles"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista General del Entorno en Unity" }
+        ]
+      },
+      arduino: {
+        titulo: "Sistema Electrónico Interactivo (Arduino)",
+        categoria: "HARDWARE Y PROTOTIPADO BÁSICO",
+        descripcion: "Proyecto académico que explora la integración de microcontroladores para conectar entradas del entorno real con un sistema digital.",
+        detalles: "Desarrollo de un circuito lógico y programación en C++ para coordinar sensores analógicos y digitales.",
+        tecnologias: ["Arduino IDE", "C++", "Sensores Básicos", "Prototipado Académico"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", titulo: "Esquema y Montaje Físico" }
+        ]
+      }
+    };
+
+    // GENERADOR DINÁMICO DEL CARRUSEL DE PORTADA (Extrae todas las imágenes de todos los proyectos automáticamente)
+    let imagenesPortada = [];
+    Object.values(proyectosData).forEach(proj => {
+      proj.elementosGaleria.forEach(item => {
+        if (item.tipo === 'imagen') {
+          imagenesPortada.push(item.src);
+        }
+      });
+    });
+
     let indicePortada = 0;
 
     function iniciarCarruselPortada() {
       const contenedor = document.getElementById('carrusel-portada');
-      if (!contenedor) return;
+      if (!contenedor || imagenesPortada.length === 0) return;
 
       contenedor.innerHTML = imagenesPortada.map((img, i) => `
         <img src="${img}" class="absolute inset-0 w-full h-full object-cover object-[center_25%] transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-85' : 'opacity-0'}" data-portada-img="${i}">
@@ -365,55 +416,6 @@
         target.scrollIntoView({ behavior: 'smooth' });
       }
     }
-
-    const proyectosData = {
-      blender: {
-        titulo: "Diorama Habitación Retro Años 90 (Blender)",
-        categoria: "MODELADO 3D ACADÉMICO",
-        descripcion: "Proyecto académico centrado en la creación de un diorama inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica y poner en práctica los fundamentos de modelado de mobiliario y texturizado.",
-        detalles: "Aplicación de modelado poligonal en Blender, experimentando con técnicas de iluminación y composición de escena.",
-        tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Texturizado Básico"],
-        elementosGaleria: [
-          { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Vista General del Diorama" },
-          { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Detalle de Consola e Iluminación" },
-          { tipo: "imagen", src: "Render N°3 DIORAMA.png", titulo: "Área de Trabajo y Computador" },
-          { tipo: "imagen", src: "Render N°4 DIORAMA.png", titulo: "Mobiliario y Cubo de Rubik" },
-          { tipo: "video", src: "video-diorama.mp4", titulo: "Recorrido en Video 360°" }
-        ]
-      },
-      mimbre: {
-        titulo: "Set de Living de Mimbre (Blender / Cycles)",
-        categoria: "MODELADO 3D ACADÉMICO",
-        descripcion: "Proyecto académico centrado en el diseño y modelado de un conjunto de mobiliario de exterior, incluyendo sillones de mimbre con cojines acolchados, una mesa de centro con cubierta de cristal y un juego de tazas detallado. El enfoque principal estuvo en la aplicación de texturas PBR realistas y la iluminación y renderizado en Cycles.",
-        detalles: "Práctica avanzada de modelado poligonal, mapeo UV, creación de materiales PBR para texturas de mimbre y tela, y configuración de render en Cycles para reflejos naturales.",
-        tecnologias: ["Blender", "Modelado 3D", "Texturas PBR", "Render Cycles", "Mapeo UV"],
-        elementosGaleria: [
-          { tipo: "imagen", src: "mimbre-n1.png", titulo: "Vista General del Set de Living" },
-          { tipo: "imagen", src: "mimbre-n2.png", titulo: "Perspectiva de Sillones y Distribución" },
-          { tipo: "imagen", src: "mimbre-n3.png", titulo: "Detalle de Mesa de Centro, Vidrio y Tazas" }
-        ]
-      },
-      unity: {
-        titulo: "Prototipo de Realidad Virtual / Juegos 3D (Unity)",
-        categoria: "DESARROLLO INTERACTIVO ESTUDIANTIL",
-        descripcion: "Prototipo universitario desarrollado en Unity con mecánicas orientadas a la resolución de puzzles y comprensión del espacio virtual.",
-        detalles: "Práctica de programación en C# implementando lógicas interactivas sencillas, gestión de eventos y optimización básica.",
-        tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Lógica de Puzzles"],
-        elementosGaleria: [
-          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista General del Entorno en Unity" }
-        ]
-      },
-      arduino: {
-        titulo: "Sistema Electrónico Interactivo (Arduino)",
-        categoria: "HARDWARE Y PROTOTIPADO BÁSICO",
-        descripcion: "Proyecto académico que explora la integración de microcontroladores para conectar entradas del entorno real con un sistema digital.",
-        detalles: "Desarrollo de un circuito lógico y programación en C++ para coordinar sensores analógicos y digitales.",
-        tecnologias: ["Arduino IDE", "C++", "Sensores Básicos", "Prototipado Académico"],
-        elementosGaleria: [
-          { tipo: "imagen", src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", titulo: "Esquema y Montaje Físico" }
-        ]
-      }
-    };
 
     // Variables de estado del visor interactivo
     let proyectoActualActivo = null;
