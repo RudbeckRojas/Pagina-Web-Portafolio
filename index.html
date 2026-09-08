@@ -80,7 +80,7 @@
             </div>
           </div>
 
-          <!-- Portada Dinámica con Fade Suave (Se alimenta sola de los proyectos) -->
+          <!-- Portada Dinámica con Fade Suave (Se alimenta automáticamente de los proyectos) -->
           <div class="lg:col-span-5 relative min-h-[450px] lg:min-h-full w-full overflow-hidden bg-black">
             <div id="carrusel-portada" class="absolute inset-0 w-full h-full">
               <!-- JS Inyección Dinámica -->
@@ -124,7 +124,7 @@
             <!-- Proyecto 2: Set de Living de Mimbre -->
             <div onclick="abrirProyecto('mimbre')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
               <div class="h-60 bg-gray-900 relative overflow-hidden">
-                <img src="mimbre-n3.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
+                <img src="Render Mesas Mimbre N°1.png" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
                 <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
                   <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg> RENDER CYCLES
                 </div>
@@ -133,36 +133,6 @@
                 <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Set de Living de Mimbre</h3>
                 <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Modelado de sillones, mesa de centro con vidrio y juego de tazas aplicando texturas PBR y render en Cycles.</p>
                 <span class="text-xs font-bold text-taupe underline">Ver galería y detalles →</span>
-              </div>
-            </div>
-
-            <!-- Proyecto 3: Unity -->
-            <div onclick="abrirProyecto('unity')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
-              <div class="h-60 bg-gray-900 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
-                <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
-                  <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg> UNITY ENGINE
-                </div>
-              </div>
-              <div class="p-8">
-                <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Prototipo Videojuego VR / 3D</h3>
-                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Práctica de programación de mecánicas de interacción en C#, enfocada en resolución de puzzles y físicas.</p>
-                <span class="text-xs font-bold text-taupe underline">Ver detalles y código →</span>
-              </div>
-            </div>
-
-            <!-- Proyecto 4: Arduino -->
-            <div onclick="abrirProyecto('arduino')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer">
-              <div class="h-60 bg-gray-900 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
-                <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
-                  <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14zM6 7h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10zm-4 4h2v2H6zm4 0h2v2h10z"/></svg> ARDUINO HARDWARE
-                </div>
-              </div>
-              <div class="p-8">
-                <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Sistema Electrónico Interactivo</h3>
-                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Desarrollo académico que integra sensores y actuadores con microcontroladores programados en C++.</p>
-                <span class="text-xs font-bold text-taupe underline">Ver documentación →</span>
               </div>
             </div>
           </div>
@@ -328,34 +298,14 @@
         detalles: "Práctica avanzada de modelado poligonal, mapeo UV, creación de materiales PBR para texturas de mimbre y tela, y configuración de render en Cycles para reflejos naturales.",
         tecnologias: ["Blender", "Modelado 3D", "Texturas PBR", "Render Cycles", "Mapeo UV"],
         elementosGaleria: [
-          { tipo: "imagen", src: "mimbre-n1.png", titulo: "Vista General del Set de Living" },
-          { tipo: "imagen", src: "mimbre-n2.png", titulo: "Perspectiva de Sillones y Distribución" },
-          { tipo: "imagen", src: "mimbre-n3.png", titulo: "Detalle de Mesa de Centro, Vidrio y Tazas" }
-        ]
-      },
-      unity: {
-        titulo: "Prototipo de Realidad Virtual / Juegos 3D (Unity)",
-        categoria: "DESARROLLO INTERACTIVO ESTUDIANTIL",
-        descripcion: "Prototipo universitario desarrollado en Unity con mecánicas orientadas a la resolución de puzzles y comprensión del espacio virtual.",
-        detalles: "Práctica de programación en C# implementando lógicas interactivas sencillas, gestión de eventos y optimización básica.",
-        tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Lógica de Puzzles"],
-        elementosGaleria: [
-          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista General del Entorno en Unity" }
-        ]
-      },
-      arduino: {
-        titulo: "Sistema Electrónico Interactivo (Arduino)",
-        categoria: "HARDWARE Y PROTOTIPADO BÁSICO",
-        descripcion: "Proyecto académico que explora la integración de microcontroladores para conectar entradas del entorno real con un sistema digital.",
-        detalles: "Desarrollo de un circuito lógico y programación en C++ para coordinar sensores analógicos y digitales.",
-        tecnologias: ["Arduino IDE", "C++", "Sensores Básicos", "Prototipado Académico"],
-        elementosGaleria: [
-          { tipo: "imagen", src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", titulo: "Esquema y Montaje Físico" }
+          { tipo: "imagen", src: "Render Mesas Mimbre N°1.png", titulo: "Vista General del Set de Living" },
+          { tipo: "imagen", src: "Render Mesas Mimbre N°2.png", titulo: "Perspectiva de Sillones y Distribución" },
+          { tipo: "imagen", src: "Render Mesas Mimbre N°3.png", titulo: "Detalle de Mesa de Centro, Vidrio y Tazas" }
         ]
       }
     };
 
-    // GENERADOR DINÁMICO DEL CARRUSEL DE PORTADA (Extrae todas las imágenes de todos los proyectos automáticamente)
+    // GENERADOR DINÁMICO DEL CARRUSEL DE PORTADA (Extrae todas las imágenes de los proyectos activos)
     let imagenesPortada = [];
     Object.values(proyectosData).forEach(proj => {
       proj.elementosGaleria.forEach(item => {
