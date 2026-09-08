@@ -1,6 +1,17 @@
-/* ==========================================
-   ESTILOS ÚNICOS Y MODERNOS - RUDBECK
-   ========================================== */
+/* Declarar la fuente personalizada */
+@font-face {
+  font-family: 'Impactful';
+  src: url('IMPACTFUL.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Aplicar la fuente a todo el portafolio */
+* {
+  font-family: 'Impactful', sans-serif !important;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
 * {
   font-family: 'Inter', sans-serif !important;
