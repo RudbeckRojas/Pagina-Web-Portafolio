@@ -27,7 +27,7 @@
 </head>
 <body class="min-h-screen selection:bg-bordeaux selection:text-whiteSmoke flex flex-col justify-between">
 
-  <!-- NAVEGACIÓN SUPERIOR FIJA (ÚNICA Y ELEGANTE) -->
+  <!-- NAVEGACIÓN SUPERIOR FIJA -->
   <nav class="border-b border-bordeaux/40 bg-black/90 backdrop-blur-md sticky top-0 z-50 w-full shadow-[0_4px_25px_rgba(73,17,28,0.2)]">
     <div class="w-full px-6 md:px-16 h-20 flex flex-col md:flex-row justify-center md:justify-between items-center gap-2 md:gap-0">
       <span class="text-xs md:text-sm font-bold tracking-widest cursor-pointer text-taupe uppercase hover:text-bordeaux transition-colors text-center" onclick="scrollToSection('inicio')">
@@ -98,7 +98,7 @@
               <h2 class="text-bordeaux font-bold tracking-widest text-sm uppercase mb-2">TRAYECTORIA TÉCNICA</h2>
               <h1 class="text-4xl md:text-5xl font-extrabold text-whiteSmoke tracking-tight">Proyectos Destacados</h1>
             </div>
-            <p class="text-sm opacity-75 font-light">Explora el desglose visual, código e interactividad de mis desarrollos clave.</p>
+            <p class="text-sm opacity-75 font-light">Haz clic en cualquier proyecto para desplegar su galería de alta resolución y documentación.</p>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
@@ -112,7 +112,7 @@
               <div class="p-8">
                 <h3 class="text-2xl font-bold mb-3 text-whiteSmoke">Diorama Habitación Retro Años 90</h3>
                 <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Recreación estética vintage con iluminación ambiental, modelado detallado de objetos y recorrido en video 360.</p>
-                <span class="text-xs font-bold text-taupe underline">Ver carrusel interactivo →</span>
+                <span class="text-xs font-bold text-taupe underline">Ver galería y detalles →</span>
               </div>
             </div>
 
@@ -241,7 +241,7 @@
       </section>
     </div>
 
-    <!-- SECCIÓN: DETALLE DE PROYECTO (Oculta por defecto) -->
+    <!-- SECCIÓN: DETALLE DE PROYECTO CON GALERÍA MODERNA -->
     <div id="detalle-proyecto" class="w-full px-8 md:px-16 py-16 hidden animate-fade-in scroll-mt-20">
       <button onclick="cerrarProyecto()" class="mb-8 px-5 py-2.5 rounded-lg bg-bordeaux text-whiteSmoke hover:bg-bordeaux/80 transition-colors flex items-center gap-2 text-sm font-semibold shadow-md">
         ← Volver a Proyectos
@@ -251,6 +251,16 @@
         <div id="detalle-contenido">
           <!-- Inyección dinámica -->
         </div>
+      </div>
+    </div>
+
+    <!-- MODAL LIGHTBOX (PANTALLA COMPLETA PARA AMPLIAR IMÁGENES/VIDEOS) -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4 md:p-12 animate-fade-in">
+      <button onclick="cerrarLightbox()" class="absolute top-6 right-6 text-whiteSmoke bg-bordeaux hover:bg-bordeaux/80 px-4 py-2 rounded-xl text-sm font-bold border border-taupe/30 z-50">
+        ✕ Cerrar Vista
+      </button>
+      <div id="lightbox-contenido" class="max-w-5xl max-h-[85vh] w-full flex items-center justify-center">
+        <!-- Contenido dinámico del lightbox -->
       </div>
     </div>
 
@@ -293,14 +303,14 @@
         titulo: "Diorama Habitación Retro Años 90 (Blender)",
         categoria: "MODELADO 3D Y DISEÑO DE ESCENARIOS",
         descripcion: "Proyecto profesional y académico consistente en la creación de un diorama completo inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica mediante el modelado de mobiliario clásico, texturizado detallado e iluminación ambiental.",
-        detalles: "Modelado poligonal optimizado en Blender, aplicando técnicas de iluminación volumétrica y composición de escena para simular un diorama coleccionable de alta fidelidad. Incluye renders individuales y un recorrido en video 360 integrados en un visor continuo.",
+        detalles: "Modelado poligonal optimizado en Blender, aplicando técnicas de iluminación volumétrica y composición de escena para simular un diorama coleccionable de alta fidelidad. Haz clic en cualquier elemento de la galería inferior para expandirlo en pantalla completa.",
         tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Composición de Diorama"],
-        elementosCarrusel: [
-          { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Render 1 - Vista General del Diorama" },
-          { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Render 2 - Detalle de Consola y Iluminación" },
-          { tipo: "imagen", src: "Render N°3 DIORAMA.png", titulo: "Render 3 - Área de Trabajo y Computador" },
-          { tipo: "imagen", src: "Render N°4 DIORAMA.png", titulo: "Render 4 - Mobiliario y Cubo de Rubik" },
-          { tipo: "video", src: "video-diorama.mp4", titulo: "Recorrido Interactivo en Video 360°" }
+        elementosGaleria: [
+          { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Vista General del Diorama" },
+          { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Detalle de Consola e Iluminación" },
+          { tipo: "imagen", src: "Render N°3 DIORAMA.png", titulo: "Área de Trabajo y Computador" },
+          { tipo: "imagen", src: "Render N°4 DIORAMA.png", titulo: "Mobiliario y Cubo de Rubik" },
+          { tipo: "video", src: "video-diorama.mp4", titulo: "Recorrido en Video 360°" }
         ]
       },
       unity: {
@@ -309,8 +319,8 @@
         descripcion: "Prototipo interactivo desarrollado en Unity con mecánicas orientadas a la resolución de desafíos lógicos y exploración espacial inmersiva.",
         detalles: "Programación en C# estructurada bajo patrones de arquitectura limpios. Incluye gestión de interacciones inmersivas, físicas personalizadas y optimización de rendimiento gráfico para cascos VR.",
         tecnologias: ["Unity Engine", "C# Scripting", "VR Interaction", "Game Design"],
-        elementosCarrusel: [
-          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista del Prototipo en Unity" }
+        elementosGaleria: [
+          { tipo: "imagen", src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=1200", titulo: "Vista General del Entorno en Unity" }
         ]
       },
       arduino: {
@@ -319,22 +329,67 @@
         descripcion: "Desarrollo de prototipo físico utilizando microcontroladores orientados a conectar entradas del entorno real con sistemas lógicos digitales.",
         detalles: "Programado en C++, integrando sensores analógicos y digitales avanzados para resolver problemas de automatización y control de hardware interactivo.",
         tecnologias: ["Arduino IDE", "C++", "Sensores y Actuadores", "Prototipado"],
-        elementosCarrusel: [
+        elementosGaleria: [
           { tipo: "imagen", src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", titulo: "Esquema y Montaje Físico" }
         ]
       }
     };
 
-    let indiceActual = 0;
-    let proyectoActualDatos = null;
-
     function abrirProyecto(id) {
       const proj = proyectosData[id];
       if (!proj) return;
       
-      proyectoActualDatos = proj;
-      indiceActual = 0;
-      renderizarCarrusel();
+      const contenedor = document.getElementById('detalle-contenido');
+      
+      let galeriaHTML = proj.elementosGaleria.map((el, index) => {
+        if (el.tipo === 'imagen') {
+          return `
+            <div onclick="abrirLightbox('imagen', '${el.src}', '${el.titulo}')" class="group relative rounded-2xl overflow-hidden border border-bordeaux/40 bg-black h-56 cursor-pointer shadow-lg card-glow">
+              <img src="${el.src}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <span class="text-xs font-bold text-taupe uppercase tracking-wider">${el.titulo} (Ampliar)</span>
+              </div>
+            </div>
+          `;
+        } else {
+          return `
+            <div onclick="abrirLightbox('video', '${el.src}', '${el.titulo}')" class="group relative rounded-2xl overflow-hidden border border-bordeaux/40 bg-black h-56 cursor-pointer shadow-lg card-glow flex items-center justify-center">
+              <video src="${el.src}" class="w-full h-full object-cover opacity-70"></video>
+              <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center gap-2 group-hover:bg-black/30 transition-all">
+                <div class="w-12 h-12 rounded-full bg-bordeaux text-white flex items-center justify-center shadow-lg">▶</div>
+                <span class="text-xs font-bold text-whiteSmoke uppercase tracking-wider">${el.titulo}</span>
+              </div>
+            </div>
+          `;
+        }
+      }).join('');
+
+      contenedor.innerHTML = `
+        <span class="text-xs font-bold text-bordeaux tracking-widest uppercase mb-2 block">${proj.categoria}</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-whiteSmoke mb-4">${proj.titulo}</h1>
+        <p class="text-base opacity-80 leading-relaxed font-light mb-8">${proj.detalles}</p>
+
+        <!-- Galería en Grid Estético -->
+        <div class="mb-10">
+          <h3 class="text-xl font-bold text-whiteSmoke mb-4">Galería Multimedia (Haz clic para ampliar)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${galeriaHTML}
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8 border-t border-bordeaux/30 pt-8">
+          <div>
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3">Enfoque y Descripción</h3>
+            <p class="text-base opacity-80 leading-relaxed font-light">${proj.descripcion}</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3">Stack Tecnológico</h3>
+            <div class="flex flex-wrap gap-2 pt-2">
+              ${proj.tecnologias.map(t => `<span class="px-3 py-1.5 rounded-lg bg-black text-whiteSmoke border border-bordeaux/60 text-xs font-semibold">${t}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
       
       document.getElementById('main-content').classList.add('hidden');
       const detalleContenedor = document.getElementById('detalle-proyecto');
@@ -348,88 +403,35 @@
       document.getElementById('portafolio').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function renderizarCarrusel() {
-      if (!proyectoActualDatos) return;
-      const contenedor = document.getElementById('detalle-contenido');
-      const elementos = proyectoActualDatos.elementosCarrusel;
-      const actual = elementos[indiceActual];
-
-      let contenidoVisual = "";
-      if (actual.tipo === "imagen") {
-        contenidoVisual = `
-          <div class="h-[380px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-bordeaux/50 shadow-xl bg-black relative">
-            <img src="${actual.src}" alt="${actual.titulo}" class="w-full h-full object-contain">
+    // Funciones del Modal Lightbox
+    function abrirLightbox(tipo, src, titulo) {
+      const modal = document.getElementById('lightbox-modal');
+      const contenido = document.getElementById('lightbox-contenido');
+      
+      if (tipo === 'imagen') {
+        contenido.innerHTML = `
+          <div class="flex flex-col items-center">
+            <img src="${src}" class="max-h-[75vh] max-w-full rounded-2xl object-contain border border-bordeaux/50 shadow-2xl mb-4">
+            <span class="text-sm font-semibold text-taupe uppercase tracking-wider">${titulo}</span>
           </div>
         `;
       } else {
-        contenidoVisual = `
-          <div class="h-[380px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-bordeaux/50 shadow-xl bg-black relative">
-            <video src="${actual.src}" controls autoplay muted loop class="w-full h-full object-contain">
-              Tu navegador no soporta la reproducción de video.
+        contenido.innerHTML = `
+          <div class="flex flex-col items-center w-full">
+            <video src="${src}" controls autoplay class="max-h-[75vh] max-w-full rounded-2xl object-contain border border-bordeaux/50 shadow-2xl mb-4">
+              Tu navegador no soporta video.
             </video>
+            <span class="text-sm font-semibold text-taupe uppercase tracking-wider">${titulo}</span>
           </div>
         `;
       }
-
-      contenedor.innerHTML = `
-        <span class="text-xs font-bold text-bordeaux tracking-widest uppercase mb-2 block">${proyectoActualDatos.categoria}</span>
-        <h1 class="text-3xl md:text-4xl font-extrabold text-whiteSmoke mb-6">${proyectoActualDatos.titulo}</h1>
-        
-        <div class="mb-8">
-          <div class="flex justify-between items-center mb-3">
-            <span class="text-sm font-semibold text-bordeaux">${actual.titulo}</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-black border border-bordeaux/50 text-whiteSmoke">
-              ${indiceActual + 1} / ${elementos.length}
-            </span>
-          </div>
-
-          ${contenidoVisual}
-
-          <div class="flex justify-between items-center mt-4">
-            <button onclick="cambiarElementoCarrusel(-1)" class="px-5 py-2.5 rounded-xl bg-black border border-bordeaux/60 text-whiteSmoke hover:bg-bordeaux/30 transition-all font-semibold text-sm flex items-center gap-2">
-              ← Anterior
-            </button>
-            <div class="flex gap-1.5">
-              ${elementos.map((_, i) => `<span class="h-2 rounded-full transition-all ${i === indiceActual ? 'bg-bordeaux w-6' : 'bg-brown/50 w-2'}"></span>`).join('')}
-            </div>
-            <button onclick="cambiarElementoCarrusel(1)" class="px-5 py-2.5 rounded-xl bg-black border border-bordeaux/60 text-whiteSmoke hover:bg-bordeaux/30 transition-all font-semibold text-sm flex items-center gap-2">
-              Siguiente →
-            </button>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h3 class="text-xl font-bold text-whiteSmoke mb-3">Descripción General</h3>
-            <p class="text-base opacity-80 leading-relaxed font-light">${proyectoActualDatos.descripcion}</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-whiteSmoke mb-3">Proceso Técnico y Documentación</h3>
-            <p class="text-base opacity-80 leading-relaxed font-light">${proyectoActualDatos.detalles}</p>
-          </div>
-        </div>
-
-        <div class="border-t border-bordeaux/40 pt-6">
-          <h4 class="text-sm font-semibold text-bordeaux mb-3 uppercase tracking-wider">Tecnologías y Herramientas Utilizadas:</h4>
-          <div class="flex flex-wrap gap-2">
-            ${proyectoActualDatos.tecnologias.map(t => `<span class="px-3 py-1.5 rounded-lg bg-black text-whiteSmoke border border-bordeaux/60 text-xs font-semibold">${t}</span>`).join('')}
-          </div>
-        </div>
-      `;
+      
+      modal.classList.remove('hidden');
     }
 
-    function cambiarElementoCarrusel(direccion) {
-      if (!proyectoActualDatos) return;
-      const total = proyectoActualDatos.elementosCarrusel.length;
-      indiceActual += direccion;
-
-      if (indiceActual >= total) {
-        indiceActual = 0;
-      } else if (indiceActual < 0) {
-        indiceActual = total - 1;
-      }
-
-      renderizarCarrusel();
+    function cerrarLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+      document.getElementById('lightbox-contenido').innerHTML = '';
     }
   </script>
 </body>
