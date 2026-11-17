@@ -441,14 +441,6 @@
             </h3>
             <p class="text-base opacity-80 leading-relaxed font-light">${proj.descripcion}</p>
           </div>
-          <div class="md:col-span-2 bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
-            <h3 class="text-xl font-bold text-whiteSmoke mb-4 flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Flujo de Trabajo
-            </h3>
-            <ol class="space-y-3 text-base opacity-80 leading-relaxed font-light list-decimal list-inside">
-              ${proj.flujo.map(paso => `<li>${paso}</li>`).join('')}
-            </ol>
-          </div>
           <div class="bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
             <h3 class="text-xl font-bold text-whiteSmoke mb-3 flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Herramientas Utilizadas
@@ -456,6 +448,14 @@
             <div class="flex flex-wrap gap-2.5 pt-2">
               ${proj.tecnologias.map(t => `<span class="px-4 py-2 rounded-xl bg-black text-whiteSmoke border border-bordeaux/60 text-xs font-semibold shadow-md">${t}</span>`).join('')}
             </div>
+          </div>
+          <div class="md:col-span-2 bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
+            <h3 class="text-xl font-bold text-whiteSmoke mb-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Flujo de Trabajo
+            </h3>
+            <ol class="space-y-3 text-base opacity-80 leading-relaxed font-light list-decimal list-inside pt-2">
+              ${proj.flujo.map(paso => `<li>${paso}</li>`).join('')}
+            </ol>
           </div>
         </div>
       `;
@@ -579,3 +579,4 @@
   </script>
 </body>
 </html>
+
