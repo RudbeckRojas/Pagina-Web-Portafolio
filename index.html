@@ -116,7 +116,7 @@
               </div>
               <div class="p-8">
                 <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Diorama Habitación Retro Años 90</h3>
-                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Proyecto universitario enfocado en la recreación estética vintage mediante modelado, texturizado e iluminación ambiental.</p>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Escena 3D completa en Blender que recrea una habitación de los años 90. Abarca modelado poligonal de mobiliario y props, texturizado de materiales, composición de escena e iluminación ambiental, con renders estáticos y recorrido en video.</p>
                 <span class="text-xs font-bold text-taupe underline">Ver galería y detalles →</span>
               </div>
             </div>
@@ -131,7 +131,7 @@
               </div>
               <div class="p-8">
                 <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Set de Living de Mimbre</h3>
-                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Modelado de sillones, mesa de centro con vidrio y juego de tazas aplicando texturas PBR y render en Cycles.</p>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Set de mobiliario modelado en Blender: sillones de mimbre con cojines, mesa de centro con cubierta de cristal y juego de tazas. Incluye mapeo UV, materiales PBR (mimbre, tela, vidrio) y renderizado fotorrealista con Cycles.</p>
                 <span class="text-xs font-bold text-taupe underline">Ver galería y detalles →</span>
               </div>
             </div>
@@ -280,9 +280,16 @@
       blender: {
         titulo: "Diorama Habitación Retro Años 90 (Blender)",
         categoria: "MODELADO 3D ACADÉMICO",
-        descripcion: "Proyecto académico centrado en la creación de un diorama inspirado en la estética vintage de los años 90. El enfoque estuvo en lograr una atmósfera nostálgica y poner en práctica los fundamentos de modelado de mobiliario y texturizado.",
-        detalles: "Aplicación de modelado poligonal en Blender, experimentando con técnicas de iluminación y composición de escena.",
-        tecnologias: ["Blender", "Modelado 3D", "Iluminación PBR", "Texturizado Básico"],
+        descripcion: "Proyecto académico cuyo objetivo fue construir una escena 3D cohesiva con identidad visual propia: una habitación de los años 90 con consola, computador, mobiliario y objetos de época como un cubo de Rubik. El trabajo exigió mantener coherencia de escala, paleta de color y lenguaje material entre todos los elementos, de modo que la escena transmitiera una atmósfera nostálgica creíble.",
+        detalles: "Escena completa desarrollada en Blender, desde el blocking inicial hasta el render final. Combina modelado poligonal de props y mobiliario, asignación de materiales y texturas, composición de cámara e iluminación ambiental para reforzar el tono vintage.",
+        flujo: [
+          "Referencias y blocking: definición de proporciones, escala y distribución de los elementos en la habitación.",
+          "Modelado poligonal: construcción de mobiliario, consola, computador y objetos decorativos, manteniendo una topología limpia.",
+          "Materiales y texturizado: asignación de shaders y texturas para diferenciar plásticos, maderas y superficies propias de la época.",
+          "Iluminación y composición: diseño de luces ambientales y encuadres de cámara para guiar la mirada y construir atmósfera.",
+          "Render y presentación: exportación de renders estáticos y un recorrido en video de la escena."
+        ],
+        tecnologias: ["Blender", "Modelado poligonal", "Iluminación PBR", "Texturizado", "Composición de escena", "Render de video"],
         elementosGaleria: [
           { tipo: "imagen", src: "Render N°1 DIORAMA.png", titulo: "Vista General del Diorama" },
           { tipo: "imagen", src: "Render N°2 DIORAMA.png", titulo: "Detalle de Consola e Iluminación" },
@@ -294,9 +301,16 @@
       mimbre: {
         titulo: "Set de Living de Mimbre (Blender / Cycles)",
         categoria: "MODELADO 3D ACADÉMICO",
-        descripcion: "Proyecto académico centrado en el diseño y modelado de un conjunto de mobiliario de exterior, incluyendo sillones de mimbre con cojines acolchados, una mesa de centro con cubierta de cristal y un juego de tazas detallado. El enfoque principal estuvo en la aplicación de texturas PBR realistas y la iluminación y renderizado en Cycles.",
-        detalles: "Práctica avanzada de modelado poligonal, mapeo UV, creación de materiales PBR para texturas de mimbre y tela, y configuración de render en Cycles para reflejos naturales.",
-        tecnologias: ["Blender", "Modelado 3D", "Texturas PBR", "Render Cycles", "Mapeo UV"],
+        descripcion: "Proyecto académico orientado a la visualización de producto: modelar un conjunto de mobiliario de exterior (sillones de mimbre con cojines acolchados, mesa de centro con cubierta de cristal y un juego de tazas) y presentarlo con calidad fotorrealista. El desafío técnico central fue reproducir el comportamiento de cada material frente a la luz: la trama irregular del mimbre, la caída de la tela y la transparencia y reflexión del vidrio.",
+        detalles: "Flujo de trabajo de visualización 3D en Blender: modelado poligonal de cada pieza, desdoblado UV para aplicar texturas sin distorsión, materiales PBR (base color, rugosidad, normal) y render con el motor de trazado de rayos Cycles para obtener reflejos, sombras e interacción de luz físicamente plausibles.",
+        flujo: [
+          "Modelado poligonal: construcción de sillones, cojines, mesa y tazas con atención a la forma y a los detalles de cada objeto.",
+          "Mapeo UV: desdoblado de las mallas para aplicar texturas con densidad uniforme y sin estiramientos, especialmente en la trama del mimbre.",
+          "Materiales PBR: configuración de shaders para mimbre, tela y vidrio, ajustando rugosidad, relieve y transparencia.",
+          "Iluminación y cámara: montaje de luces y encuadres que resalten texturas y reflejos del cristal.",
+          "Render en Cycles: renderizado con trazado de rayos para lograr reflejos naturales y sombras suaves."
+        ],
+        tecnologias: ["Blender", "Modelado poligonal", "Texturas PBR", "Render Cycles", "Mapeo UV", "Shaders de vidrio y tela"],
         elementosGaleria: [
           { tipo: "imagen", src: "mimbre-n1.png", titulo: "Vista General del Set de Living" },
           { tipo: "imagen", src: "mimbre-n2.png", titulo: "Perspectiva de Sillones y Distribución" },
@@ -426,6 +440,14 @@
               <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Objetivo del Proyecto
             </h3>
             <p class="text-base opacity-80 leading-relaxed font-light">${proj.descripcion}</p>
+          </div>
+          <div class="md:col-span-2 bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
+            <h3 class="text-xl font-bold text-whiteSmoke mb-4 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-taupe"></span> Flujo de Trabajo
+            </h3>
+            <ol class="space-y-3 text-base opacity-80 leading-relaxed font-light list-decimal list-inside">
+              ${proj.flujo.map(paso => `<li>${paso}</li>`).join('')}
+            </ol>
           </div>
           <div class="bg-black/50 border border-bordeaux/25 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
             <h3 class="text-xl font-bold text-whiteSmoke mb-3 flex items-center gap-2">
