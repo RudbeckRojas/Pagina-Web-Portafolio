@@ -131,8 +131,23 @@
               </div>
               <div class="p-8">
                 <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Set de Living de Mimbre</h3>
-                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Set de mobiliario modelado en Blender: sillones de mimbre con cojines, mesa de centro con cubierta de cristal y juego de tazas. Incluye mapeo UV, materiales PBR (mimbre, tela, vidrio) y renderizado fotorrealista con Cycles.</p>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Set de mobiliario modelado en Blender: sillones de mimbre con cojines acolchados, mesa de centro con cubierta de cristal y juego de tazas. Incluye mapeo UV, materiales PBR (mimbre, tela, vidrio) y renderizado fotorrealista con Cycles.</p>
                 <span class="text-xs font-bold text-taupe underline">Ver galería y detalles →</span>
+              </div>
+            </div>
+
+            <!-- Proyecto 3: Simulador Batalla Aérea -->
+            <div onclick="abrirProyecto('batallaAerea')" class="bg-[#151311] border border-bordeaux/40 rounded-2xl overflow-hidden shadow-xl card-glow cursor-pointer md:col-span-2 lg:col-span-2">
+              <div class="h-64 bg-gray-900 relative overflow-hidden">
+                <img src="AvionAliado.png" alt="Simulador Batalla Aérea" class="w-full h-full object-cover opacity-85 hover:scale-110 transition-transform duration-700">
+                <div class="absolute top-4 left-4 bg-bordeaux text-whiteSmoke border border-whiteSmoke/20 px-3 py-1 text-xs font-bold rounded-full tracking-wider flex items-center gap-2 shadow-md">
+                  <svg class="w-3.5 h-3.5 fill-current text-whiteSmoke" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.08-.34.12-.57.12s-.41-.04-.57-.12l-7.9-4.44A1.003 1.003 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.08.34-.12.57-.12s.41.04.57.12l7.9 4.44c.32.17.53.5.53.88v9z"/></svg> UNITY & C#
+                </div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3 text-whiteSmoke" style="font-family: 'Titania', sans-serif !important;">Simulador Batalla Aérea</h3>
+                <p class="text-sm opacity-70 leading-relaxed font-light mb-6">Prototipo de combate aéreo en Unity con control ágil de vuelo, maniobras de giro, ensamblaje modular de aeronaves, oleadas enemigas y efectos visuales de propulsión y estelas en alas.</p>
+                <span class="text-xs font-bold text-taupe underline">Ver galería, video y detalles →</span>
               </div>
             </div>
           </div>
@@ -315,6 +330,26 @@
           { tipo: "imagen", src: "mimbre-n1.png", titulo: "Vista General del Set de Living" },
           { tipo: "imagen", src: "mimbre-n2.png", titulo: "Perspectiva de Sillones y Distribución" },
           { tipo: "imagen", src: "mimbre-n3.png", titulo: "Detalle de Mesa de Centro, Vidrio y Tazas" }
+        ]
+      },
+      batallaAerea: {
+        titulo: "Simulador Batalla Aérea",
+        categoria: "UNITY & C# • SIMULACIÓN DE VUELO",
+        descripcion: "Prototipo de combate y simulación aérea desarrollado en Unity y C# enfocado en la sensación de vuelo ágil, el control de orientación de las aeronaves y la respuesta visual durante las maniobras y el combate.",
+        detalles: "Sistema de vuelo y presentación visual para cazas aliados y enemigos: controla cabeceo, guiñada y alabeo mediante una jerarquía de pivote (BankPivot) para separar la inclinación visual de la orientación base del modelo, ensambla modelos y sockets de armas/turbinas de forma modular, gestiona oleadas de enemigos y añade efectos de propulsión y estelas en las puntas de las alas.",
+        flujo: [
+          "Física y control de vuelo: programación del movimiento, aceleración, límites de altitud/mapa y maniobra de retorno de 180° en C#.",
+          "Jerarquía visual y alabeo: separación de la rotación base del modelo respecto al ángulo de inclinación lateral (bank) para evitar giros erróneos.",
+          "Ensamblaje modular de cazas: carga de modelos 3D, limpieza de elementos previos y creación de puntos de anclaje para armas, misiles y turbinas.",
+          "Oleadas y orientación enemiga: aparición escalonada de enemigos por oleadas y alineación visual de los cazas según su dirección de desplazamiento.",
+          "Efectos de vuelo y estelas: integración de efectos de propulsión reactivos al acelerador y estelas en las puntas de las alas en maniobras de alto G."
+        ],
+        tecnologias: ["Unity Engine", "C#", "Programación de Vuelo", "Sistemas de Partículas", "Trail Renderer", "Gestión de Oleadas"],
+        elementosGaleria: [
+          { tipo: "imagen", src: "PantallaCarga.png", titulo: "Pantalla de Carga y Presentación" },
+          { tipo: "imagen", src: "AvionAliado.png", titulo: "Caza Aliado en Vuelo y Maniobra" },
+          { tipo: "imagen", src: "AvionEnemigo.png", titulo: "Caza Enemigo y Escenario de Combate" },
+          { tipo: "video", src: "SimuladorBatallaAerea.mp4", titulo: "Gameplay — Simulador Batalla Aérea" }
         ]
       }
     };
@@ -579,4 +614,3 @@
   </script>
 </body>
 </html>
-
