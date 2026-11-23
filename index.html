@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -349,7 +350,7 @@
           { tipo: "imagen", src: "PantallaCarga.png", titulo: "Pantalla de Carga y Presentación" },
           { tipo: "imagen", src: "AvionAliado.png", titulo: "Caza Aliado en Vuelo y Maniobra" },
           { tipo: "imagen", src: "AvionEnemigo.png", titulo: "Caza Enemigo y Escenario de Combate" },
-          { tipo: "video", src: "simuladorbatalla.mp4", titulo: "Gameplay — Simulador Batalla Aérea" }
+          { tipo: "video", src: "GameplayPruebaDeConcepto.mp4", titulo: "Gameplay — Simulador Batalla Aérea" }
         ]
       }
     };
@@ -542,17 +543,18 @@
           </div>
         `;
       } else {
-        // Reproductor de video limpio
+        // Reproductor de video con contenedor 16:9 fijo y aviso en caso de ruta no encontrada
         contenedorMedia.innerHTML = `
-          <div class="w-full flex items-center justify-center max-h-[52vh] rounded-2xl overflow-hidden border border-bordeaux/40 shadow-2xl bg-black relative">
-            <video src="${actual.src}" controls class="max-h-[52vh] w-auto object-contain outline-none">
-              Tu navegador no soporta video.
+          <div class="video-showcase-wrapper relative">
+            <video controls playsinline preload="metadata" onerror="this.parentElement.innerHTML='<p class=\\'text-sm text-taupe p-6 text-center\\'>No se pudo cargar el archivo <strong>${actual.src}</strong>. Verifica que el nombre en GitHub coincida exactamente con mayúsculas y minúsculas.</p>'">
+              <source src="${actual.src}" type="video/mp4">
+              Tu navegador no soporta la reproducción de video.
             </video>
           </div>
         `;
       }
 
-      // Renderizar miniaturas inferiores sincronizadas
+      // Renderizar miniaturas inferiores sincronizadas (sin duplicar carga de video)
       if (contenedorMiniaturas) {
         contenedorMiniaturas.innerHTML = elementos.map((el, i) => {
           const esActivo = i === indiceGaleriaActual;
@@ -566,9 +568,8 @@
             `;
           } else {
             return `
-              <div onclick="seleccionarIndiceGaleria(${i})" class="w-20 h-14 rounded-xl overflow-hidden border-2 ${estiloBorde} cursor-pointer transition-all bg-black flex-shrink-0 flex items-center justify-center text-xs font-bold text-whiteSmoke shadow-md relative">
-                <video src="${el.src}" class="w-full h-full object-cover opacity-40"></video>
-                <div class="absolute inset-0 flex items-center justify-center bg-black/50 text-xs">▶</div>
+              <div onclick="seleccionarIndiceGaleria(${i})" class="w-20 h-14 rounded-xl overflow-hidden border-2 ${estiloBorde} cursor-pointer transition-all bg-[#151311] flex-shrink-0 flex items-center justify-center text-xs font-bold text-whiteSmoke shadow-md">
+                ▶ Video
               </div>
             `;
           }
@@ -614,3 +615,5 @@
   </script>
 </body>
 </html>
+
+```
